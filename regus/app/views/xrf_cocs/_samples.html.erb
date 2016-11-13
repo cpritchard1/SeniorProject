@@ -1,0 +1,82 @@
+  <div class="large-12 columns" style="padding-left: 2%; padding-right: 2%;">
+    <div class="job_type">
+      <h4 id="label_style">Stored Samples</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <% if @xrf_coc.xrf_coc_samples.any? %>
+        <div class="scroll_box" style="height: 75vh; overflow: auto;">
+          <div class="large-12 columns">
+            <br>
+
+            <% @xrf_coc.xrf_coc_samples.reverse.each do |cur| %>
+              <div class="xrf_sample">
+                <div class="row">
+                  <div class="large-3 columns">
+                    <div class="job_type">
+                      <h5 id="job">Sample: <%= cur.sample_num %></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-8 columns">
+                    <div class="label_style">
+                      <h5 id="label_style">Location</h5>
+                    </div>
+                    <div class="text">
+                      <h6><%= cur.location %></h6>
+                    </div>
+                  </div>
+                  <div class="large-4 columns">
+                    <div class="label_style">
+                      <h5 id="label_style">Material</h5>
+                    </div>
+                    <div class="text">
+                      <h6><%= cur.material %></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="large-3 columns">
+                    <div class="label_style">
+                      <h5 id="label_style">Color</h5>
+                    </div>
+                    <div class="text">
+                      <h6><%= cur.color %></h6>
+                    </div>
+                  </div>
+                  <div class="large-3 columns">
+                    <div class="label_style">
+                      <h5 id="label_style">Condition</h5>
+                    </div>
+                    <div class="text">
+                      <h6><%= cur.condition %></h6>
+                    </div>
+                  </div>
+                  <div class="large-3 columns">
+                    <div class="label_style">
+                      <h5 id="label_style">Reading</h5>
+                    </div>
+                    <div class="text">
+                      <h6><%= cur.reading %></h6>
+                    </div>
+                  </div>
+                  <div class="large-3 columns">
+                    <div class="label_style">
+                      <h5 id="label_style">Category</h5>
+                    </div>
+                    <div class="text">
+                      <h6><%= cur.category %></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+            <% end %>
+          </div>
+        </div>
+      <% end%>
+    </div>
+  </div>

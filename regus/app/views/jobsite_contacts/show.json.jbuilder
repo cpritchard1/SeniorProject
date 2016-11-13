@@ -1,0 +1,1 @@
+json.partial! "jobsite_contacts/jobsite_contact", jobsite_contact: @jobsite_contact

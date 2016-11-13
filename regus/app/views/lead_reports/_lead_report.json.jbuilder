@@ -1,0 +1,2 @@
+json.extract! lead_report, :id, :date, :company, :contact, :address, :service, :instrument, :jobsite_name, :jobsite_addr, :consultant, :purpose, :analytics, :results, :recommendations, :assumptions, :cac, :cdph, :nv, :job_id, :created_at, :updated_at
+json.url lead_report_url(lead_report, format: :json)

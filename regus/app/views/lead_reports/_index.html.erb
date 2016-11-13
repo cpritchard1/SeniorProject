@@ -1,0 +1,102 @@
+<style>
+    html, body
+    {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #808080
+    }
+    .page_padding
+    {
+      padding-bottom: 5%;
+      min-height: 100%;
+      width: 90%;
+      margin: 0 auto;
+      box-shadow: 0px 45px 50px black;
+      background: white;
+      overflow: hidden;
+    }
+</style>
+
+
+  <div class="large-12 columns">
+    <div class="job_type">
+      <h4 id="label_style">Showing CoC Reports</h4>
+    </div>
+  </div>
+
+<div id="lead_reports">
+
+  <div class="row">
+    <br>
+    <div class="large-6 columns">
+      <table class="flatTable">
+        <tr class="titleTr">
+          <td class="titleTd">Positive Lead Reports</td>
+          <td colspan="7"></td>
+        </tr>
+        <tr class="headingTr">
+          <td>Date</td>
+          <td>Samples</td>
+          <!-- <td>Company</td> -->
+          <!-- <td>Service</td> -->
+          <!-- <td>Instrument</td> -->
+          <!-- <td>Jobsite name</td> -->
+          <td colspan="3"></td>
+        </tr>
+        <tbody>
+          <% @positive_lead_reports.each do |lead_report| %>
+            <tr class="bodyTr">
+              <td><%= lead_report.date.strftime("%I:%M %p, %b %d %Y") %></td>
+              <td><%= lead_report.xrf_coc.xrf_coc_samples.count %></td>
+              <!-- <td><%= lead_report.company %></td> -->
+              <!-- <td><%= lead_report.service %></td> -->
+              <!-- <td><%= lead_report.instrument %></td> -->
+              <!-- <td><%= lead_report.jobsite_name %></td> -->
+              <td><%= link_to 'View', lead_report_path(lead_report, format: 'pdf'), target: "_blank" %></td>
+              <td><%= link_to 'Edit', edit_lead_report_path(lead_report), target: "_blank" %></td>
+              <!-- <td> link_to 'Destroy', lead_report, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "New Positive Report", new_lead_report_path(:xrf_coc_id=>@xrf_coc.id), :target=>"_blank", class: "small button" %>
+    </div>
+
+    <div class="large-6 columns">
+      <table class="flatTable">
+        <tr class="titleTr">
+          <td class="titleTd">Negative Lead Reports</td>
+          <td colspan="7"></td>
+        </tr>
+        <tr class="headingTr">
+          <td>Date</td>
+          <td>Samples</td>
+          <!-- <td>Company</td> -->
+          <!-- <td>Service</td> -->
+          <!-- <td>Instrument</td> -->
+          <!-- <td>Jobsite name</td> -->
+          <td colspan="3"></td>
+        </tr>
+        <tbody>
+          <% @negative_lead_reports.each do |lead_report| %>
+            <tr class="bodyTr">
+              <td><%= lead_report.date.strftime("%I:%M %p, %b %d %Y") %></td>
+              <td><%= lead_report.xrf_coc.xrf_coc_samples.count %></td>
+              <!-- <td><%= lead_report.company %></td> -->
+              <!-- <td><%= lead_report.service %></td> -->
+              <!-- <td><%= lead_report.instrument %></td> -->
+              <!-- <td><%= lead_report.jobsite_name %></td> -->
+              <td><%= link_to 'View', lead_report_neg_path(lead_report, format: 'pdf'), target: "_blank" %></td>
+              <td><%= link_to 'Edit', edit_lead_report_neg_path(lead_report), target: "_blank" %></td>
+              <!-- <td> link_to 'Destroy', lead_report, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "New Negative Report", new_lead_report_neg_path(:xrf_coc_id=>@xrf_coc.id), :target=>"_blank", class: "small button" %>
+    </div>
+  </div>
+
+</div>
+

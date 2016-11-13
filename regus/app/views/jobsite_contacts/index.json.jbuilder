@@ -1,0 +1,1 @@
+json.array! @jobsite_contacts, partial: 'jobsite_contacts/jobsite_contact', as: :jobsite_contact

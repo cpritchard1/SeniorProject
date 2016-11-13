@@ -1,0 +1,33 @@
+<%= form_for(@subcontractor_contact) do |f| %>
+  <% if @subcontractor_contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subcontractor_contact.errors.count, "error") %> prohibited this subcontractor_contact from being saved:</h2>
+
+      <ul>
+      <% @subcontractor_contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :subcontractor_id %><br>
+    <%= f.text_field :subcontractor_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

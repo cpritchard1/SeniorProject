@@ -1,0 +1,280 @@
+<style>
+/*    html, body
+    {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #808080
+    }
+    .page_padding
+    {
+      padding: 2% 5% 5% 5%;
+      min-height: 100%;
+      width: 85%;
+      margin: 0 auto;
+      box-shadow: 0px 45px 50px black;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }*/
+</style>
+
+<%= form_for(@job, :html => {"data-abide" => ''}) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :date, :value=>Time.now %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value=>current_user.id %>
+  </div>
+
+  <div class="row">
+
+    <div class="large-4 columns">
+      <div class="company">
+        <div class="label_style">
+          <h4 id="label_style">Company</h4>
+        </div>
+        <%= f.fields_for :company, @company do |company| %>
+          <div class="field">
+            <%= company.autocomplete_field :name, autocomplete_company_name_companies_path, 
+                                            :update_elements => {:id => '#id_element',
+                                                                 :phone => '#phone_element',
+                                                                 :street => '#street_element',
+                                                                 :city => '#city_element',
+                                                                 :zip => '#zip_element',
+                                                                 :email => '#email_element',
+                                                                 :website => '#website_element'}, placeholder: "Company Name", required: true%>
+       
+          </div>
+
+          <div class="field">
+            <%= company.text_field :phone, id: 'phone_element', placeholder: "Company Phone", required: true %>
+          </div>
+        
+          <div class="field">
+            <%= company.text_field :street, id: 'street_element', placeholder: "Street", required: true %>
+          </div>
+  
+          <div class="field">
+            <%= company.text_field :city, id: 'city_element', placeholder: "City cannot be blank", required: true %>
+          </div>
+
+          <div class="dropdown">
+            <%= company.select :state, options_for_select(@states, @states[4]) %>
+          </div>
+
+          <div class="field">
+            <%= company.text_field :zip, id: 'zip_element', placeholder: "Zip", required: true %>
+          </div>
+            
+          <div class="field">
+              <%= company.text_field :email, id: 'email_element', placeholder: "Company Email", required: true %>
+          </div>
+            
+          <div class="field">
+              <%= company.text_field :website, id: 'website_element', placeholder: "Company Website", required: true %>
+          </div>
+
+          <div class="hidden">
+            <%= company.hidden_field :id, id: 'id_element' %> 
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- closing column -->
+
+    <div class="large-4 columns">
+      <div class="company">
+        <div class="label_style">
+          <h4 id="label_style">Subcontractor</h4>
+        </div>
+        <%= f.fields_for :subcontractor, @subcontractor do |subcontractor| %>
+          <div class="field">
+            <%= subcontractor.autocomplete_field :name, autocomplete_subcontractor_name_subcontractors_path, 
+                                :update_elements => {:id => '#s_id_element',
+                                                     :phone => '#s_phone_element',
+                                                     :street => '#s_street_element',
+                                                     :city => '#s_city_element',
+                                                     :zip => '#s_zip_element',
+                                                     :email => '#s_email_element',
+                                                     :website => '#s_website_element'}, placeholder: "Subcontractor Name", required: true %>
+          </div>
+
+
+          <div class="field">
+            <%= subcontractor.text_field :phone, id: 's_phone_element', placeholder: "Subcontractor Phone", required: true %>
+          </div>
+
+          <div class="field">
+            <%= subcontractor.text_field :street, id: 's_street_element', placeholder: "Street", required: true %>
+          </div>
+
+          <div class="field">
+            <%= subcontractor.text_field :city, id: 's_city_element', placeholder: "City", required: true %>
+          </div>
+
+          <div class="dropdown">
+            <%= subcontractor.select :state, options_for_select(@states, @states[4]) %>
+          </div>
+
+          <div class="field">
+            <%= subcontractor.text_field :zip, id: 's_zip_element', placeholder: "Zip", required: true %>
+          </div>
+
+          <div class="field">
+            <%= subcontractor.text_field :email, id: 's_email_element', placeholder: "Subcontractor Email", required: true %>
+          </div>
+
+          <div class="field">
+            <%= subcontractor.text_field :website, id: 's_website_element', placeholder: "Subcontractor Website", required: true %>
+          </div>
+ 
+          <div class="hidden">
+            <%= subcontractor.hidden_field :id, id: 's_id_element', placeholder: "Subcontractor Id", required: true %> 
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- closing column -->
+
+    <div class="large-4 columns">
+      <div class="company">
+        <div class="label_style">
+          <h4 id="label_style">Jobsite</h4>
+        </div>
+        <%= f.fields_for :jobsite, @jobsite do |jobsite| %>
+          <div class="field">
+            <%= jobsite.autocomplete_field :name, autocomplete_jobsite_name_jobsites_path,
+                                      :update_elements => { :id => '#j_id_element',
+                                                            :street => '#j_street_element',
+                                                            :city => '#j_city_element',
+                                                            :zip => '#j_zip_element'}, placeholder: "Jobsite Name", required: true %>
+          </div>
+          <div class="field">
+            <%= jobsite.text_field :street, id: 'j_street_element', placeholder: "Street", required: true %>
+          </div>
+          <div class="field">
+            <%= jobsite.text_field :city, id: 'j_city_element', placeholder: "City", required: true %>             
+          </div>
+          <div class="dropdown">
+            <%= jobsite.select :state, options_for_select(@states, @states[4]) %>
+          </div>
+          <div class="field">
+            <%= jobsite.text_field :zip, id: 'j_zip_element', placeholder: "Zip", required: true %>
+          </div>
+          <div class="hidden">
+            <%= jobsite.hidden_field :id, id: 'j_id_element' %> 
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- closing column -->
+
+  </div> <!-- END class "row" -->
+<br>
+  <div class="row">
+
+    <div class="large-4 columns">
+      <div class="company">
+        <div class="label_style">
+          <h4 id="label_style">Company Contact</h4>
+        </div>
+        <%= f.fields_for :company_contact, @company_contact do |company_contact| %>
+          <div class="field">
+            <%= company_contact.autocomplete_field :name, autocomplete_company_contact_name_company_contacts_path,
+                                                              :update_elements => { :id => '#cc_id_element',
+                                                                                    :phone => '#cc_phone_element',
+                                                                                    :email => '#cc_email_element'}, placeholder: "Contact Name", required: true %>
+          </div>
+          <div class="field">
+            <%= company_contact.text_field :phone, id: 'cc_phone_element', placeholder: "Contact Phone", required: true %>
+          </div>
+          <div class="field">
+            <%= company_contact.text_field :email, id: 'cc_email_element', placeholder: "Contact Email", required: true %>
+          </div>
+          <div class="hidden">
+            <%= company_contact.hidden_field :id, id: 'cc_id_element' %> 
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- closing column -->
+
+    <div class="large-4 columns">
+      <div class="company">
+        <div class="label_style">
+          <h4 id="label_style">Subcontractor Contact</h4>
+        </div>
+        <%= f.fields_for :subcontractor_contact, @subcontractor_contact do |subcontractor_contact| %>
+          <div class="field">
+            <%= subcontractor_contact.autocomplete_field :name, autocomplete_subcontractor_contact_name_subcontractor_contacts_path,
+                                                              :update_elements => { :id => '#sc_id_element',
+                                                                                    :phone => '#sc_phone_element',
+                                                                                    :email => '#sc_email_element'}, placeholder: "Contact Name", required: true %>
+          </div>
+          <div class="field">
+              <%= subcontractor_contact.text_field :phone, id: 'sc_phone_element', placeholder: "Contact Phone", required: true %>
+          </div>
+          <div class="field">
+              <%= subcontractor_contact.text_field :email, id: 'sc_email_element', placeholder: "Contact Email", required: true %>
+          </div>
+          <div class="hidden">
+            <%= subcontractor_contact.hidden_field :id, id: 'sc_id_element' %> 
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- closing column -->
+
+    <div class="large-4 columns">
+      <div class="company">
+        <div class="label_style">
+          <h4 id="label_style">Jobsite Contact</h4>
+        </div>
+        <%= f.fields_for :jobsite_contact, @jobsite_contact do |jobsite_contact| %>
+          <div class="field">
+            <%= jobsite_contact.autocomplete_field :name, autocomplete_jobsite_contact_name_jobsite_contacts_path,
+                                                              :update_elements => { :id => '#jc_id_element',
+                                                                                    :phone => '#jc_phone_element',
+                                                                                    :email => '#jc_email_element'}, placeholder: "Contact Name", required: true %>
+          </div>
+          <div class="field">
+            <%= jobsite_contact.text_field :phone, id: 'jc_phone_element', placeholder: "Contact Phone", required: true %>
+          </div>
+          <div class="field">
+            <%= jobsite_contact.text_field :email, id: 'jc_email_element', placeholder: "Contact Email", required: true %>
+          </div>
+          <div class="hidden">
+            <%= jobsite_contact.hidden_field :id, id: 'jc_id_element' %> 
+          </div>
+        <% end %>
+      </div>
+    </div> <!-- closing column -->
+
+  </div> <!-- END class "row" -->
+<br>
+  <div class="row">
+
+    <div class="large-4 columns">
+      <div class="actions">
+        <%= f.submit "Create Job", class: "small button expanded" %>
+      </div>
+    </div>
+    <div class="large-5 columns end">
+      <div data-abide-error class="alert callout" style="display: none; text-align: center;">
+        <p><i class="fi-alert"></i> No fields can be blank! </p>
+      </div>
+    </div>
+
+  </div>
+<% end %>
+
+
+

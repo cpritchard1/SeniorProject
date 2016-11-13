@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-09-01 20:08:03
+  user_id: 
+  company_id: 
+  subcontractor_id: 
+  jobsite_id: 
+
+two:
+  date: 2016-09-01 20:08:03
+  user_id: 
+  company_id: 
+  subcontractor_id: 
+  jobsite_id: 

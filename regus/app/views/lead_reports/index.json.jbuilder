@@ -1,0 +1,1 @@
+json.array! @lead_reports, partial: 'lead_reports/lead_report', as: :lead_report

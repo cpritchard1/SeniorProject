@@ -1,0 +1,1 @@
+json.array! @xrf_cocs, partial: 'xrf_cocs/xrf_coc', as: :xrf_coc

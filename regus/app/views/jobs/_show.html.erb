@@ -1,0 +1,227 @@
+
+            <div class="row"> 
+              <div class="large-3 columns">
+                <div class="job_links">
+                  <h4 id="job"> <%="Job ID: #{@job.id}"%> </h4>
+                </div>
+              </div>
+
+              <div class="large-4 columns end">
+                <strong> Created On: </strong>
+                <span id="job"><%= @job.date.strftime("%I:%M %p, %b %d %Y") %></span> <br>
+
+                <strong> Created By: </strong>
+                <span id="job"><%= @job.user.username %></span> <br>
+              </div>
+
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="large-4 columns">
+                <div class="label_style">
+                  <h4 id="label_style">Company</h4>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info"> <%= @job.company.name %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Phone</strong></td>
+                      <td id="job_info"> <%= @job.company.phone %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Street</strong></td>
+                      <td id="job_info"> <%= @job.company.street %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>City</strong></td>
+                      <td id="job_info"> <%= @job.company.city %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>State</strong></td>
+                      <td id="job_info"> <%= @job.company.state %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Zip</strong></td>
+                      <td id="job_info"> <%= @job.company.zip %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Email</strong></td>
+                      <td id="job_info"> <%= @job.company.email %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Website</strong></td>
+                      <td id="job_info"> <%= @job.company.website %> </td>
+                    </tr>
+                  </table>
+                </div> <!-- closing table -->
+              </div> <!-- closing columns -->
+
+              <div class="large-4 columns">
+                <div class="label_style">
+                  <h4 id="label_style">Subcontractor</h4>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr >
+                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.name %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Phone</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.phone %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Street</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.street %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>City</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.city %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>State</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.state %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Zip</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.zip %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Email</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.email %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Website</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor.website %> </td>
+                    </tr>
+                  </table>
+                </div> <!-- closing table -->
+              </div> <!-- closing columns -->
+
+              <div class="large-4 columns">
+                <div class="label_style">
+                  <h4 id="label_style">Jobsite</h4>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info"> <%= @job.jobsite.name %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Street</strong></td>
+                      <td id="job_info"> <%= @job.jobsite.street %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>City</strong></td>
+                      <td id="job_info"> <%= @job.jobsite.city %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>State</strong></td>
+                      <td id="job_info"> <%= @job.jobsite.state %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Zip</strong></td>
+                      <td id="job_info"> <%= @job.jobsite.zip %> </td>
+                    </tr>
+                  </table>
+                </div> <!-- closing table -->
+
+                <% if @job.jobsite.full_address.present? %>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <p><a data-open="exampleModal1" class="small button expanded">View on map</a></p>
+                    </div>
+                  </div>
+
+                  <div class="reveal" id="exampleModal1" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
+                    <h4 id="job"><%=@job.jobsite.name%></h4>
+                    <div class="map">
+                      <iframe width="700" 
+                            height="450" 
+                            frameborder="0" 
+                            style="border:0"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDBvzq5WsidARhAZ0821MB1iAMTPnHiamI&zoom=18&q=<%=@job.jobsite.full_address%>" 
+                            allowfullscreen>
+                      </iframe>
+                    </div>
+                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                <% end %>
+
+              </div> <!-- closing columns -->
+            </div> <!-- closing row -->
+
+            <div class="row">
+              <div class="large-4 columns">
+                <div class="label_style">
+                  <h4 id="label_style">Company Contact</h4>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info"> <%= @job.company_contact.name %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Phone</strong></td>
+                      <td id="job_info"> <%= @job.company_contact.phone %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Email</strong></td>
+                      <td id="job_info"> <%= @job.company_contact.email %> </td>
+                    </tr>    
+                  </table>
+                </div> <!-- closing table -->
+              </div> <!-- closing columns -->
+
+              <div class="large-4 columns">
+                <div class="label_style">
+                  <h4 id="label_style">Subcontractor Contact</h4>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor_contact.name %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Phone</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor_contact.phone %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Email</strong></td>
+                      <td id="job_info"> <%= @job.subcontractor_contact.email %> </td>
+                    </tr>    
+                  </table>
+                </div> <!-- closing table -->
+              </div> <!-- closing columns -->
+
+              <div class="large-4 columns">
+                <div class="label_style">
+                  <h4 id="label_style">Jobsite Contact</h4>
+                </div>
+                <div class="table">
+                  <table>
+                    <tr>
+                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info"> <%= @job.jobsite_contact.name %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Phone</strong></td>
+                      <td id="job_info"> <%= @job.jobsite_contact.phone %> </td>
+                    </tr>
+                    <tr>
+                      <td id="job_info"><strong>Email</strong></td>
+                      <td id="job_info"> <%= @job.jobsite_contact.email %> </td>
+                    </tr>    
+                  </table>
+                </div> <!-- closing table -->
+              </div> <!-- closing columns -->
+            </div> <!-- closing row -->

@@ -1,0 +1,1 @@
+json.array! @tape_bulk_coc_samples, partial: 'tape_bulk_coc_samples/tape_bulk_coc_sample', as: :tape_bulk_coc_sample

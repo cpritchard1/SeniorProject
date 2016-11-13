@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="large-12 columns">
+    <div class="job_type">
+      <h4>New Lead Sample</h4>
+    </div>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sample num:</strong>
+  <%= @xrf_coc_sample.sample_num %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @xrf_coc_sample.location %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @xrf_coc_sample.material %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @xrf_coc_sample.color %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @xrf_coc_sample.condition %>
+</p>
+
+<p>
+  <strong>Reading:</strong>
+  <%= @xrf_coc_sample.reading %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @xrf_coc_sample.category %>
+</p>
+
+<p>
+  <strong>Xrf coc:</strong>
+  <%= @xrf_coc_sample.xrf_coc %>
+</p>
+
+<%= link_to 'Edit', edit_xrf_coc_sample_path(@xrf_coc_sample) %> |
+<%= link_to 'Back', xrf_coc_samples_path %>

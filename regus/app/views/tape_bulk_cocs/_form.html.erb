@@ -1,0 +1,63 @@
+
+
+    <div class="row">
+      <div class="large-12 columns">  
+        <%= form_for(@tape_bulk_coc) do |f| %>
+          <% if @tape_bulk_coc.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@tape_bulk_coc.errors.count, "error") %> prohibited this tape_bulk_coc from being saved:</h2>
+
+              <ul>
+              <% @tape_bulk_coc.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+      
+          <div class="job_type">
+            <h4 id="label_style"><%= @tape_bulk_coc.cli_type %> Tape/Bulk COC  - <%=@tape_bulk_coc.job_type %></h4>
+          </div>
+      </div>
+    </div>
+
+        <div class="row">
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style">Sample Date</h5> 
+            </div>
+            <div class="text">
+              <h5><%= @tape_bulk_coc.date.strftime("%b %d %Y") %> </h5>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style"> Sample Time </h5>
+            </div>
+            <div class="text">
+              <h5> <%= @tape_bulk_coc.date.strftime("%I:%M %p") %> </h5>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style"> Turnaround Time </h5>
+            </div>
+            <%= f.select :turnaround, options_for_select(@turnaround) %>
+          </div>
+          <div class="hidden">
+            <%= f.hidden_field :job_type, value: @tape_bulk_coc.job_type %>
+            <%= f.hidden_field :cli_type, value: @tape_bulk_coc.cli_type %>
+            <%= f.hidden_field :job_id, value: @tape_bulk_coc.job_id %>
+            <%= f.hidden_field :user_id, :value=>current_user.id %>
+            <%= f.hidden_field :date, :value=>Time.now %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-3 columns">
+            <div class="actions">
+              <%= f.submit "Submit Tape/Bulk COC", class: "small button expanded" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+

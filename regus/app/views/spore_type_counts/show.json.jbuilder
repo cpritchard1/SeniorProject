@@ -1,0 +1,1 @@
+json.partial! "spore_type_counts/spore_type_count", spore_type_count: @spore_type_count

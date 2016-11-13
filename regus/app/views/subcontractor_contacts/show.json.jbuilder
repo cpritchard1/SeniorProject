@@ -1,0 +1,1 @@
+json.partial! "subcontractor_contacts/subcontractor_contact", subcontractor_contact: @subcontractor_contact

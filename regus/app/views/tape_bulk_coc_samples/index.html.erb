@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tape Bulk Coc Samples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sample num</th>
+      <th>Location</th>
+      <th>Collection type</th>
+      <th>Tape bulk coc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tape_bulk_coc_samples.each do |tape_bulk_coc_sample| %>
+      <tr>
+        <td><%= tape_bulk_coc_sample.sample_num %></td>
+        <td><%= tape_bulk_coc_sample.location %></td>
+        <td><%= tape_bulk_coc_sample.collection_type %></td>
+        <td><%= tape_bulk_coc_sample.tape_bulk_coc %></td>
+        <td><%= link_to 'Show', tape_bulk_coc_sample %></td>
+        <td><%= link_to 'Edit', edit_tape_bulk_coc_sample_path(tape_bulk_coc_sample) %></td>
+        <td><%= link_to 'Destroy', tape_bulk_coc_sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tape bulk coc sample', new_tape_bulk_coc_sample_path %>

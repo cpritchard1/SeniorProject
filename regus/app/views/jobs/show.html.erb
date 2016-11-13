@@ -1,0 +1,67 @@
+<style>
+    html, body
+    {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #808080
+    }
+    .page_padding
+    {
+      padding-top: 2%;
+      padding-bottom: 5%;
+      min-height: 100%;
+      width: 90%;
+      margin: 0 auto;
+      box-shadow: 0px 45px 50px black;
+      background: white;
+      overflow: hidden;
+    }
+</style>
+
+<!-- <div class="row"> -->
+  <div class="large-12 columns" style="padding-left: 2%; padding-right: 2%;">
+    <div class="job_type">
+      <h4 id="label_style">Signed In As: <%= current_user.fname %> <%= current_user.lname %></h4>
+    </div>
+  </div>
+<!-- </div> -->
+
+<!-- <div class="row"> -->
+  <!-- <div class="large-12 columns"> -->
+
+    <div class="large-12 columns large-collapse" style="padding-top: 2%; padding-left: 5%; padding-right: 5%">
+      <div class="large-2 columns">
+        <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
+          <li class="tabs-title is-active" id="job_links"><a href="#panel1v" aria-selected="true">Job Information</a></li>
+          <li class="tabs-title" id="job_links"><a href="#panel2v">Job CoC's</a></li>
+          <li class="tabs-title"><a href="#panel3v">New Job</a></li>
+          <li class="tabs-title"><a href="#panel4v">All Jobs</a></li>
+          <li class="tabs-title"><a href="#panel5v">All Reports</a></li>
+        </ul>
+      </div>
+      <div class="large-10 columns">
+        <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
+          <div class="tabs-panel is-active" id="panel1v" style="border-left: solid 1px #f2f2f2">
+            <%= render 'jobs/show' %>
+          </div>
+          <div class="tabs-panel" id="panel2v" style="border-left: solid 1px #f2f2f2">
+            <%= render 'jobs/cocs' %>
+          </div>
+          <div class="tabs-panel" id="panel3v" style="border-left: solid 1px #f2f2f2">
+            <%= render 'jobs/form' %>
+          </div> 
+          <div class="tabs-panel" id="panel4v" style="border-left: solid 1px #f2f2f2">
+            <%= render 'jobs/index' %>
+          </div> 
+          <div class="tabs-panel" id="panel5v" style="border-left: solid 1px #f2f2f2">
+            <%= render 'all_reports/index' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- </div> -->
+<!-- </div> -->
+
+

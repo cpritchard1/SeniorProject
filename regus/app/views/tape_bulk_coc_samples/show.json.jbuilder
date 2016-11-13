@@ -1,0 +1,1 @@
+json.partial! "tape_bulk_coc_samples/tape_bulk_coc_sample", tape_bulk_coc_sample: @tape_bulk_coc_sample

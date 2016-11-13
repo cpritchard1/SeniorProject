@@ -1,0 +1,1 @@
+json.array! @lead_report_negs, partial: 'lead_report_negs/lead_report_neg', as: :lead_report_neg

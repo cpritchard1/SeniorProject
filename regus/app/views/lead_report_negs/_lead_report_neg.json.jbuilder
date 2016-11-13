@@ -1,0 +1,2 @@
+json.extract! lead_report_neg, :id, :date, :company, :contact, :address, :service, :instrument, :jobsite_name, :jobsite_addr, :consultant, :purpose, :analytics, :results, :assumptions, :cac, :cdph, :nv, :xrf_coc_id, :created_at, :updated_at
+json.url lead_report_neg_url(lead_report_neg, format: :json)

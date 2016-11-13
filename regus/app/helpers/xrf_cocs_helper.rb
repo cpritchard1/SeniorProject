@@ -1,0 +1,2 @@
+module XrfCocsHelper
+end

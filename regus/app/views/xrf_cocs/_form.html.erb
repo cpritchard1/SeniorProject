@@ -1,0 +1,97 @@
+
+<div class="xrf_coc_new">
+  <div class="xrf_coc">
+    <div class="row">
+      <div class="large-12 columns">  
+        <%= form_for(@xrf_coc, :html => {"data-abide" => ''}) do |f| %>
+          <% if @xrf_coc.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@xrf_coc.errors.count, "error") %> prohibited this xrf_coc from being saved:</h2>
+
+              <ul>
+              <% @xrf_coc.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="job_type">
+            <h4><%= link_to "#{@xrf_coc.cli_type} XRF COC  - #{@xrf_coc.job_type}", @xrf_coc.cli_type, class: "job_link" %></h4>
+          </div>
+      </div>
+    </div>
+
+        <div class="row">
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style">Sample Date</h5> 
+            </div>
+            <div class="text">
+              <h5><%= @xrf_coc.date.strftime("%b %d %Y") %> </h5>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style"> Sample Time </h5>
+            </div>
+            <div class="text">
+              <h5> <%= @xrf_coc.date.strftime("%I:%M %p") %> </h5>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style">Turn Around Time </h5>
+            </div>
+            <%= f.select :turnaround, options_for_select(@turnaround) %><br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">XRF Unit</h5>
+            </div>
+            <%= f.select :xrfunit, options_for_select(@xrf_unit) %>
+          </div>
+
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">XRF Mode</h5>
+            </div>
+            <%= f.select :xrfmode, options_for_select(@xrf_mode) %>
+          </div>
+
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">Action Level</h5>
+            </div>
+            <%= f.select :actionlevel, options_for_select(@action_level) %>
+          </div>
+
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">Abatement Level</h5>
+            </div>
+            <%= f.select :abatementlevel, options_for_select(@abatement_level) %>
+          </div>
+          <div class="hidden">
+            <%= f.hidden_field :job_type, value: @xrf_coc.job_type %>
+            <%= f.hidden_field :cli_type, value: @xrf_coc.cli_type %>
+            <%= f.hidden_field :job_id, value: @xrf_coc.job_id %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          </div>
+        </div>
+
+        <br>
+        <div class="row">
+          <div class="large-3 columns">
+            <div class="actions">
+              <%= f.submit "Submit XRF COC", class: "small button expanded" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+   
+

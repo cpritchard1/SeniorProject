@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Xrf Cocs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Created On</th>
+      <th>Turnaround</th>
+      <th>Xrfunit</th>
+      <th>Xrfmode</th>
+      <th>Actionlevel</th>
+      <th>Abatementlevel</th>
+      <th>Job Type</th>
+      <th>CLI type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @xrf_cocs.each do |xrf_coc| %>
+      <tr>
+        <td><%= xrf_coc.date.time.strftime("%I:%M %p, %b %d %Y") %></td>
+        <td><%= xrf_coc.turnaround %></td>
+        <td><%= xrf_coc.xrfunit %></td>
+        <td><%= xrf_coc.xrfmode %></td>
+        <td><%= xrf_coc.actionlevel %></td>
+        <td><%= xrf_coc.abatementlevel %></td>
+        <td><%= xrf_coc.cli_type.job_type.job_type %> </td>
+        <td><%= xrf_coc.cli_type.clitype %></td>
+        <td><%= link_to 'Show', xrf_coc %></td>
+        <td><%= link_to 'Edit', edit_xrf_coc_path(xrf_coc) %></td>
+        <td><%= link_to 'Destroy', xrf_coc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Xrf coc', new_xrf_coc_path %>

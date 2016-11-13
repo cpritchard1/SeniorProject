@@ -1,0 +1,220 @@
+<style>
+  .top-bar{
+    display: none;
+  }
+  .page-break { 
+    display: block; 
+    page-break-before: always; 
+  }
+  .results_table{
+    border: solid gray;
+    border-collapse: collapse;
+    border-width: thin;
+    /*float: center;*/
+  }
+  td, tr{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    padding-left: 2%;
+  }
+  td#location{
+    width: 35%;
+  }
+  thead{
+    font-style: italic;
+    color: white;
+    font-size: 10%;
+    background: #418a95;
+  }
+  tbody{
+    background: #f6f3f7;
+  }
+  strong#test{
+    font-family: 'Raleway', sans-serif;
+    font-style: light;
+  }
+</style>
+
+<div class="report_preview">
+  <div class="row">
+    <div class="image">
+      <%= image_tag "regas_small.png" %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <p>
+        <strong id="test">Report Date:</strong><br>
+        <%= @lead_report.date.strftime("%I:%M %p, %b %d %Y") %>
+      </p>
+    </div>
+    <div class="large-3 columns">
+      <p>
+        <strong id="test">Regas Consultant:</strong><br>
+        <%= @lead_report.consultant %>
+      </p>
+    </div>
+    <div class="large-6 columns">
+      <span></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">  
+      <p>
+        <strong id="test">Client:</strong><br>
+        <%= @lead_report.company %><br>
+        <%= @lead_report.contact %><br>
+        <%= @lead_report.address %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-3 columns">
+      <p>
+        <strong id="test">Service:</strong><br>
+        <%= @lead_report.service %> & Report
+      </p>
+    </div>
+    <div class="large-3 columns">
+      <p>
+        <strong id="test">Instrument:</strong><br>
+        <%= @lead_report.instrument %>
+      </p>
+    </div>
+    <div class="large-6 columns">
+      <span></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        <strong id="test">Jobsite:</strong><br>
+        <%= @lead_report.jobsite_name %><br>
+        <%= @lead_report.jobsite_addr %>
+      </p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        <h5 id="job"><strong>Purpose & Scope of Services:</strong></h5>
+        <%= simple_format(@lead_report.purpose) %>
+      </p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        <h5 id="job"><strong>Analytical Results:</strong></h5>
+        <i><%= simple_format(@lead_report.analytics) %></i>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        <h5 id="job"><strong>Results Table:</strong></h5>
+        <%= simple_format(@lead_report.results) %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        The location and results from this sampling are as follows:
+      </p>
+      <table class="results_table">
+        <thead>
+          <td style="font-size: 12px"> ID </td>
+          <td id="location" style="font-size: 12px"> Location </td>
+          <td style="font-size: 12px"> Material </td>
+          <td style="font-size: 12px"> Color </td>
+          <td style="font-size: 12px"> Condition </td>
+          <td style="font-size: 12px"> Lead (mg/cm&#178) </td>
+        </thead>
+        <tbody>
+          <% @lead_report.xrf_coc.xrf_coc_samples.each do |cur| %>
+            <tr>
+              <td style="font-size: 10px"> <%= cur.sample_num %> </td>
+              <td id="location" style="font-size: 10px"> <%= cur.location %> </td>
+              <td style="font-size: 10px"> <%= cur.material %> </td>
+              <td style="font-size: 10px"> <%= cur.color %> </td>
+              <td style="font-size: 10px"> <%= cur.condition %> </td>
+              <td style="font-size: 10px"> <%= cur.reading %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        <h5 id="job"><strong>Recommendations:</strong></h5>
+        <%= simple_format(@lead_report.recommendations) %>
+      </p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        <h5 id="job"><strong>Assumptions & Limitations:</strong></h5>
+        <%= simple_format(@lead_report.assumptions) %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <p>
+        Reviewed and submitted by: <br>
+        Dominick Sager <br>
+        Senior Consultant<br>
+
+        <div class="footer" style="font-size: 10px">
+          RegasGroup<br>
+          Environmental Consultants<br>
+          <%= @lead_report.cac %><br>
+          <%= @lead_report.cdph %><br>
+          <%= @lead_report.nv %><br>
+        </div>
+      </p>
+    </div>
+  </div>
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br>
+  <footer>
+    <hr>
+    <div class="row">
+      <div class="footer" id="addr" style="font-size: 10px">
+        705 E. Bidwell St. Ste 2-244, Folsom, CA 95630<br>
+        Ph: 916.235.3110 | Fx: 916.404.5170<br>
+        www.regasgroup.com
+      </div>
+    </div>
+  </footer>
+
+</div> <!-- CLOSING PAGE PADDING -->
+

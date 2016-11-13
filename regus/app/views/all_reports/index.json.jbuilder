@@ -1,0 +1,1 @@
+json.array! @all_reports, partial: 'all_reports/all_report', as: :all_report

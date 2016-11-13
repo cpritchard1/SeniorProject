@@ -1,0 +1,88 @@
+
+<div id="show_coc">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="lead_img">
+          <%= image_tag "lead.jpg" %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="job_type">
+          <h4><%= link_to "#{@xrf_coc.cli_type} XRF COC - #{@xrf_coc.job_type}", @xrf_coc.cli_type, class: "job_link" %> </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-4 columns">
+        <div class="label_style">
+          <h5 id="label_style">Sample Date</h5> 
+        </div>
+          <div class="text">
+            <h6><%= @xrf_coc.date.strftime("%b %d %Y") %> </h6>
+          </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="label_style">
+          <h5 id="label_style"> Sample Time </h5>
+        </div>
+        <div class="text">
+          <h6> <%= @xrf_coc.date.strftime("%I:%M %p") %> </h6>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="label_style">
+          <h5 id="label_style">Turn Around Time </h5>
+        </div>
+        <div class="text">
+          <h6><%= @xrf_coc.turnaround %></h6>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="large-3 columns">
+        <div class="label_style">
+          <h5 id="label_style">XRF Unit</h5>
+        </div>
+        <div class="text">
+          <h6><%= @xrf_coc.xrfunit %></h6>
+        </div>
+      </div>
+
+      <div class="large-3 columns">
+        <div class="label_style">
+          <h5 id="label_style">XRF Mode</h5>
+        </div>
+        <div class="text">
+          <h6><%= @xrf_coc.xrfmode %></h6>
+        </div>
+      </div>
+
+      <div class="large-3 columns">
+        <div class="label_style">
+          <h5 id="label_style">Action Level</h5>
+        </div>
+        <div class="text">
+          <h6><%= @xrf_coc.actionlevel %></h6>
+        </div>
+      </div>
+
+      <div class="large-3 columns">
+        <div class="label_style">
+          <h5 id="label_style">Abatement Level</h5>
+        </div>
+        <div class="text">
+          <h6><%= @xrf_coc.abatementlevel %></h6>
+        </div>
+      </div>
+    </div>
+    
+</div>

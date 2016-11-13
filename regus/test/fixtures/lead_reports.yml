@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-10-16 15:11:25
+  company: MyString
+  contact: MyString
+  address: MyString
+  service: MyString
+  instrument: MyString
+  jobsite_name: MyString
+  jobsite_addr: MyString
+  consultant: MyString
+  purpose: MyString
+  analytics: MyString
+  results: MyString
+  recommendations: MyString
+  assumptions: MyString
+  cac: MyString
+  cdph: MyString
+  nv: MyString
+  job_id: 
+
+two:
+  date: 2016-10-16 15:11:25
+  company: MyString
+  contact: MyString
+  address: MyString
+  service: MyString
+  instrument: MyString
+  jobsite_name: MyString
+  jobsite_addr: MyString
+  consultant: MyString
+  purpose: MyString
+  analytics: MyString
+  results: MyString
+  recommendations: MyString
+  assumptions: MyString
+  cac: MyString
+  cdph: MyString
+  nv: MyString
+  job_id: 

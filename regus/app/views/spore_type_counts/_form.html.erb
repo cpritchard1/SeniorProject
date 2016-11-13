@@ -1,0 +1,337 @@
+<div id="spore_count">
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="job_type">
+        <h5 id="job">Sample: <%= @tape_bulk_coc_sample.sample_num %></h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+
+      <div class="spore_count">
+        <%= form_for(@spore_type_count, :remote=>true) do |f| %>
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="job_type">
+                <h5 id="label_style">Spore Type</h5>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <div class="job_type">
+                <h5 id="label_style">Category / Count</h5>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <div class="job_type">
+                <h5 id="label_style">Spore Type</h5>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <div class="job_type">
+                <h5 id="label_style">Category / Count</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Agrocybe / Coprinus</h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :agrocybe, options_for_select(@category_count)%>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Alternaria</h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :alternaria, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Ascospores </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :ascospores, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Aspergillus / Penicillium </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :aspergillus, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Aereobasidium pullans </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :aureobasidium, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Basidiospores </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :basidiospores, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Bipolaris / Drechslera </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :bipolaris, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Botrysis </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :botrytis, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Chaetomium </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :chaetomium, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Cercospora </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :cercospora, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Cladosporium </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :cladosporium, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Curvularia </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :curvularia, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Epicoccum </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :epicoccum, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Fusarium </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :fusarium, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Myxomycetes / Smut </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :myxomycetes, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Nigrospora </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :nigrospora, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Oidium / Peronospoa </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :oidium, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Pithomyces </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :pithomyces, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Pollen </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :pollen, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Rust </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :rust, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Spegazzina </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :spegazzina, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Stachybotrys </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :stachybotrys, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Torula </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :torula, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Tetraploa </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :tetraploa, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Ulocladium </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :ulocladium, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Insect Fragment </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :insect, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Fibrous Particulate </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :fibrous, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Hyphal Fragment </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :hyphal, options_for_select(@category_count) %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="label_style">
+                <h6 id="job">Unidentifiable Spores </h6>
+              </div>
+            </div>
+            <div class="large-3 columns">
+              <%= f.select :unidentifiable, options_for_select(@category_count) %>
+            </div>
+            <div class="large-3 columns">
+              <div class="hidden">
+                <%= f.hidden_field :tape_bulk_coc_sample_id, :value=>@tape_bulk_sample_id %>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="new_job_type">
+                <div class="actions">
+                  <%= f.submit "Submit", class: " tiny button expanded" %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <% end %> <!-- CLOSING SPORE COUNT FORM -->
+      </div>
+
+    </div>
+  </div>
+
+</div>

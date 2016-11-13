@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Subcontractors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subcontractors.each do |subcontractor| %>
+      <tr>
+        <td><%= subcontractor.name %></td>
+        <td><%= subcontractor.phone %></td>
+        <td><%= subcontractor.street %></td>
+        <td><%= subcontractor.city %></td>
+        <td><%= subcontractor.state %></td>
+        <td><%= subcontractor.zip %></td>
+        <td><%= subcontractor.email %></td>
+        <td><%= subcontractor.website %></td>
+        <td><%= link_to 'Show', subcontractor %></td>
+        <td><%= link_to 'Edit', edit_subcontractor_path(subcontractor) %></td>
+        <td><%= link_to 'Destroy', subcontractor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subcontractor', new_subcontractor_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  purpose: MyString
+  analytics: MyString
+  results: MyString
+  assumptions: MyString
+
+two:
+  purpose: MyString
+  analytics: MyString
+  results: MyString
+  assumptions: MyString

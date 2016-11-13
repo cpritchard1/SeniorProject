@@ -1,0 +1,48 @@
+<div id="show_coc">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="lead_img">
+          <%= image_tag "mold.jpg" %>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="job_type">
+        <h4><%= link_to "#{@tape_bulk_coc.cli_type} Tape/Bulk COC - #{@tape_bulk_coc.job_type}", @tape_bulk_coc.cli_type, class: "job_link" %></h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <div class="label_style">
+        <h5 id="label_style">Sample Date</h5> 
+      </div>
+        <div class="text">
+          <h6><%= @tape_bulk_coc.date.strftime("%b %d %Y") %> </h6>
+        </div>
+    </div>
+    <div class="large-4 columns">
+      <div class="label_style">
+        <h5 id="label_style"> Sample Time </h5>
+      </div>
+      <div class="text">
+        <h6> <%= @tape_bulk_coc.date.strftime("%I:%M %p") %> </h6>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div class="label_style">
+        <h5 id="label_style">Turn Around Time </h5>
+      </div>
+      <div class="text">
+        <h6><%= @tape_bulk_coc.turnaround %></h6>
+      </div>
+    </div>
+  </div>
+
+</div>
+

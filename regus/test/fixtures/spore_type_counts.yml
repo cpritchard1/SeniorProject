@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  agrocybe: MyString
+  alternaria: MyString
+  ascospores: MyString
+  aspergillus: MyString
+  aureobasidium: MyString
+  basidiospores: MyString
+  bipolaris: MyString
+  botrytis: MyString
+  chaetomium: MyString
+  cercospora: MyString
+  cladosporium: MyString
+  curvularia: MyString
+  epicoccum: MyString
+  fusarium: MyString
+  myxomycetes: MyString
+  nigrospora: MyString
+  oidium: MyString
+  pithomyces: MyString
+  pithomyces: MyString
+  pollen: MyString
+  rust: MyString
+  spegazzina: MyString
+  stachybotrys: MyString
+  torula: MyString
+  tetraploa: MyString
+  ulocladium: MyString
+  unidentifiable: MyString
+  fibrous: MyString
+  hyphal: MyString
+  insect: MyString
+  tape_bulk_coc_sample_id: 
+
+two:
+  agrocybe: MyString
+  alternaria: MyString
+  ascospores: MyString
+  aspergillus: MyString
+  aureobasidium: MyString
+  basidiospores: MyString
+  bipolaris: MyString
+  botrytis: MyString
+  chaetomium: MyString
+  cercospora: MyString
+  cladosporium: MyString
+  curvularia: MyString
+  epicoccum: MyString
+  fusarium: MyString
+  myxomycetes: MyString
+  nigrospora: MyString
+  oidium: MyString
+  pithomyces: MyString
+  pithomyces: MyString
+  pollen: MyString
+  rust: MyString
+  spegazzina: MyString
+  stachybotrys: MyString
+  torula: MyString
+  tetraploa: MyString
+  ulocladium: MyString
+  unidentifiable: MyString
+  fibrous: MyString
+  hyphal: MyString
+  insect: MyString
+  tape_bulk_coc_sample_id: 

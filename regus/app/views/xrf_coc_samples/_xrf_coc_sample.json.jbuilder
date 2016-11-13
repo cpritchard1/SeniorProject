@@ -1,0 +1,2 @@
+json.extract! xrf_coc_sample, :id, :sample_num, :location, :material, :color, :condition, :reading, :category, :xrf_coc_id, :created_at, :updated_at
+json.url xrf_coc_sample_url(xrf_coc_sample, format: :json)

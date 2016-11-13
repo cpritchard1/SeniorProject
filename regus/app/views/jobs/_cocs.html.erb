@@ -1,0 +1,665 @@
+<style>
+    .tabs#coc_links{
+    	background-color: lightblue;
+    }
+</style>
+
+<div id="job_coc">
+
+	<ul class="tabs" data-tabs id="coc_links">
+		<li class="tabs-title is-active"><a href="#panel1a" aria-selected="true">Lead</a></li>
+		<li class="tabs-title"><a href="#panel2a">Mold Tape/Bulk</a></li>
+		<li class="tabs-title"><a href="#panel3a">Mold Mycometer</a></li>
+		<li class="tabs-title"><a href="#panel4a">Asbestos</a></li>
+		<li class="tabs-title"><a href="#panel5a">Bacteria Tape/Bulk</a></li>
+		<li class="tabs-title"><a href="#panel6a">Bacteria Mycometer</a></li>
+	</ul>
+	<div class="tabs-content" data-tabs-content="coc_links">
+		<div class="tabs-panel is-active" id="panel1a">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="lead_img">
+						<%= image_tag "lead.jpg" %>
+					</div>
+				</div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="job_type">
+						<h4 id="label_style"> Lead XRF CoC's </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-11 large-centered columns">
+					<table id="jobTypesLead">
+						<thead id="jobTypes">
+							<th>Created On</th>
+							<th>Created By</th>
+							<th>Job Type</th>
+							<th>Instrument</th>
+							<th>Sample Count</th>
+						</thead>
+						<tbody>
+							<% @lead_cocs.each do |cur| %>
+							 	<tr id="jobTypes">
+							    	<td> <%= link_to "#{cur.created_at.time.strftime("%b %d %Y, %I:%M %p")}", cur %> </td>
+							    	<td> <%= cur.user.username %> </td>
+							    	<td> <%= cur.job_type %> </td>
+							    	<td> <%= cur.xrfunit %> </td>
+							    	<td> <%= cur.xrf_coc_samples.count %> </td>
+							  	</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr>
+
+			<div class="row">
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="inspection_img", id="inspection_img1">
+								<%= image_tag "inspection.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Inspection", new_xrf_coc_path(:job_id=>@job.id, :job_type=>"Inspection", :cli_type=>"Lead"), id: "inspection1", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="laboratory_img" id="laboratory_img1">
+								<%= image_tag "laboratory.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Laboratory", new_xrf_coc_path(:job_id=>@job.id, :job_type=>"Laboratory", :cli_type=>"Lead"), id: "laboratory1", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="clearance_img" id="clearance_img1">
+								<%= image_tag "clearance.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Clearance", new_xrf_coc_path( :job_id=>@job.id, :job_type=>"Clearance",  :cli_type=>"Lead"), id: "clearance1", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tabs-panel" id="panel2a">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="mold_img">
+						<%= image_tag "mold.jpg" %>
+					</div>
+				</div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="job_type">
+						<h4 id="label_style"> Mold Tape/Bulk CoC's </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-11 large-centered columns">
+					<table id="jobTypesMold1">
+						<thead id="jobTypes">
+							<th>Created On</th>
+							<th>Created By</th>
+							<th>Job Type</th>
+							<th>  </th>
+							<th>Sample Count</th>
+						</thead>
+						<tbody>
+							<% @mold_cocs.each do |cur| %>
+							 	<tr id="jobTypes">
+							    	<td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+							    	<td> <%= cur.user.username %> </td>
+							    	<td> <%= cur.job_type %> </td>
+							    	<td>  </td>
+							    	<td> <%= cur.tape_bulk_coc_samples.count %> </td>
+							  	</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="inspection_img" id="inspection_img2">
+								<%= image_tag "inspection.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Inspection", new_tape_bulk_coc_path(:job_id=>@job.id, :job_type=>"Inspection", :cli_type=>"Mold"), id:"inspection2", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="laboratory_img" id="laboratory_img2">
+								<%= image_tag "laboratory.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Laboratory", new_tape_bulk_coc_path(:job_id=>@job.id, :job_type=>"Laboratory", :cli_type=>"Mold"), id:"laboratory2", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="clearance_img" id="clearance_img2">
+								<%= image_tag "clearance.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Clearance", new_tape_bulk_coc_path( :job_id=>@job.id, :job_type=>"Clearance",  :cli_type=>"Mold"), id:"clearance2", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tabs-panel" id="panel3a">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="mold_img">
+						<%= image_tag "mold.jpg" %>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="job_type">
+						<h4 id="label_style"> Mold Mycometer CoC's </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-11 large-centered columns">
+					<table id="jobTypesMold2">
+						<thead id="jobTypes">
+							<th>Created On</th>
+							<th>Created By</th>
+							<th>Job Type</th>
+							<th></th>
+							<th>Sample Count</th>
+						</thead>
+						<tbody>
+							 <% if @mycometer_cocs %>
+							 	<tr id="jobTypes">
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							  	</tr>
+							 <% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="inspection_img" id="inspection_img3">
+								<%= image_tag "inspection.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Inspection", "#", id:"inspection3", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="laboratory_img" id="laboratory_img3">
+								<%= image_tag "laboratory.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Laboratory", "#", id:"laboratory3", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="clearance_img" id="clearance_img3">
+								<%= image_tag "clearance.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Clearance", "#", id:"clearance3", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tabs-panel" id="panel4a">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="asbestos_img">
+						<%= image_tag "asbestos.jpg" %>
+					</div>
+				</div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="job_type">
+						<h4 id="label_style"> Asbestos PLM CoC's </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-11 large-centered columns">
+					<table id="jobTypesAsbestos">
+						<thead id="jobTypes">
+							<th>Created On</th>
+							<th>Created By</th>
+							<th>Job Type</th>
+							<th>Instrument</th>
+							<th>Sample Count</th>
+						</thead>
+						<tbody>
+							<% if @plm_cocs %>
+							 	<tr id="jobTypes">
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							  	</tr>
+							 <% end %>
+						</tbody>
+					</table>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="large-4 columns">	
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="inspection_img" id="inspection_img4">
+									<%= image_tag "inspection.jpg" %>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="large-12 columns">
+								<%= link_to "New Inspection", "#", id:"inspection4", class: "small button expanded" %>
+							</div>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="laboratory_img" id="laboratory_img4">
+									<%= image_tag "laboratory.jpg" %>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="large-12 columns">
+								<%= link_to "New Laboratory", "#", id: "laboratory4", class: "small button expanded" %>
+							</div>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="row">
+							<div class="large-12 columns">
+								<div class="clearance_img" id="clearance_img4">
+									<%= image_tag "clearance.jpg" %>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="large-12 columns">
+								<%= link_to "New Clearance", "#", id:"clearance4", class: "small button expanded" %>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tabs-panel" id="panel5a">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="bacteria_img">
+						<%= image_tag "bacteria.jpg" %>
+					</div>
+				</div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="job_type">
+						<h4 id="label_style"> Bacteria Tape/Bulk CoC's </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-11 large-centered columns">
+					<table id="jobTypesBacteria1">
+						<thead id="jobTypes">
+							<th>Created On</th>
+							<th>Created By</th>
+							<th>Job Type</th>
+							<th>Instrument</th>
+							<th>Sample Count</th>
+						</thead>
+						<tbody>
+							 <% if @bacteria_tape_bulk_cocs %>
+							 	<tr id="jobTypes">
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							  	</tr>
+							 <% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="inspection_img" id="inspection_img5">
+								<%= image_tag "inspection.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Inspection", "#", id:"inspection5", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="laboratory_img" id="laboratory_img5">
+								<%= image_tag "laboratory.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Laboratory", "#", id:"laboratory5", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="clearance_img" id="clearance_img5">
+								<%= image_tag "clearance.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Clearance", "#", id:"clearance5", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tabs-panel" id="panel6a">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="bacteria_img">
+						<%= image_tag "bacteria.jpg" %>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="job_type">
+						<h4 id="label_style"> Bacteria Mycometer CoC's </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-11 large-centered columns">
+					<table id="jobTypesBacteria2">
+						<thead id="jobTypes">
+							<th>Created On</th>
+							<th>Created By</th>
+							<th>Job Type</th>
+							<th>Instrument</th>
+							<th>Sample Count</th>
+						</thead>
+						<tbody>
+							 <% if @bacteria_mycometer_cocs %>
+							 	<tr id="jobTypes">
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							    	<td>  </td>
+							  	</tr>
+							 <% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="inspection_img" id="inspection_img6">
+								<%= image_tag "inspection.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Inspection", "#", id:"inspection6", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="laboratory_img" id="laboratory_img6">
+								<%= image_tag "laboratory.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Laboratory", "#", id:"laboratory6", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>
+				<div class="large-4 columns">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="clearance_img" id="clearance_img6">
+								<%= image_tag "clearance.jpg" %>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="large-12 columns">
+							<%= link_to "New Clearance", "#", id:"clearance6", class: "small button expanded" %>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<script>
+	$( "#inspection1" ).mouseenter(function() {
+		$("#inspection_img1").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#inspection_img1").fadeTo("fast", 0.5).css('box-shadow', 'none');
+	});
+	$( "#laboratory1" ).mouseenter(function() {
+		$("#laboratory_img1").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#laboratory_img1").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#clearance1" ).mouseenter(function() {
+		$("#clearance_img1").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#clearance_img1").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+
+
+	$( "#inspection2" ).mouseenter(function() {
+		$("#inspection_img2").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#inspection_img2").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#laboratory2" ).mouseenter(function() {
+		$("#laboratory_img2").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#laboratory_img2").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#clearance2" ).mouseenter(function() {
+		$("#clearance_img2").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#clearance_img2").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+
+
+	$( "#inspection3" ).mouseenter(function() {
+		$("#inspection_img3").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#inspection_img3").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#laboratory3" ).mouseenter(function() {
+		$("#laboratory_img3").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#laboratory_img3").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#clearance3" ).mouseenter(function() {
+		$("#clearance_img3").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#clearance_img3").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+
+
+	$( "#inspection4" ).mouseenter(function() {
+		$("#inspection_img4").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#inspection_img4").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#laboratory4" ).mouseenter(function() {
+		$("#laboratory_img4").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#laboratory_img4").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#clearance4" ).mouseenter(function() {
+		$("#clearance_img4").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#clearance_img4").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+
+
+	$( "#inspection5" ).mouseenter(function() {
+		$("#inspection_img5").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#inspection_img5").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#laboratory5" ).mouseenter(function() {
+		$("#laboratory_img5").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#laboratory_img5").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#clearance5" ).mouseenter(function() {
+		$("#clearance_img5").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#clearance_img5").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+
+
+	$( "#inspection6" ).mouseenter(function() {
+		$("#inspection_img6").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#inspection_img6").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#laboratory6" ).mouseenter(function() {
+		$("#laboratory_img6").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#laboratory_img6").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+	$( "#clearance6" ).mouseenter(function() {
+		$("#clearance_img6").fadeTo("fast", 1).css('box-shadow', '0px 2px 6px 2px grey')
+	}).mouseleave(function() {
+		$("#clearance_img6").fadeTo("fast", 0.5).css('box-shadow', 'none');;
+	});
+</script>
+
+

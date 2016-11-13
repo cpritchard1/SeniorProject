@@ -1,0 +1,91 @@
+<style>
+    html, body
+    {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      background: #808080
+    }
+    .page_padding
+    {
+      padding: 2% 5% 5% 5%;
+      min-height: 100%;
+      width: 85%;
+      margin: 0 auto;
+      box-shadow: 0px 45px 50px black;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .mce-path{
+      display: none;
+    }
+</style>
+
+<div class="new_lead_report">
+
+  <%= form_for(@lead_report) do |f| %>
+    <% if @lead_report.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@lead_report.errors.count, "error") %> prohibited this lead_report from being saved:</h2>
+
+        <ul>
+        <% @lead_report.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="hidden">
+      <%= f.hidden_field :date %>
+      <%= f.hidden_field :company %>
+      <%= f.hidden_field :contact %>
+      <%= f.hidden_field :address %>
+      <%= f.hidden_field :service %>
+      <%= f.hidden_field :instrument %>
+      <%= f.hidden_field :jobsite_name %>
+      <%= f.hidden_field :jobsite_addr %>
+      <%= f.hidden_field :consultant %>
+      <%= f.hidden_field :cac %>
+      <%= f.hidden_field :cdph %>
+      <%= f.hidden_field :nv %>
+      <%= f.hidden_field :xrf_coc_id %>
+    </div>
+
+    <div class="field">
+      <h5 id="job">PURPOSE AND SCOPE OF SERVICES:</h5>
+      <%= f.text_area :purpose, rows: "8" %>
+    </div>
+    <br>
+    <div class="field">
+      <h5 id="job">ANALYTICAL RESULTS:</h5>
+      <%= f.text_area :analytics, rows: "6" %>
+    </div>
+    <br>
+    <div class="field">
+      <h5 id="job">RESULTS TABLE:</h5>
+      <%= f.text_area :results, rows: "6" %>
+    </div>
+    <br>
+    <div class="field">
+      <h5 id="job">RECOMMENDATIONS:</h5>
+      <%= f.text_area :recommendations, rows: "20" %>
+    </div>
+    <br>
+    <div class="field">
+      <h5 id="job">ASSUMPTIONS AND LIMITATIONS:</h5>
+      <%= f.text_area :assumptions, rows: "10" %>
+    </div>
+
+    <div class="submit">
+      <div class="actions">
+        <%= f.submit "Save & Preview Report", class: "small button expanded" %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea'});</script>

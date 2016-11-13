@@ -1,0 +1,1 @@
+json.partial! "xrf_coc_samples/xrf_coc_sample", xrf_coc_sample: @xrf_coc_sample

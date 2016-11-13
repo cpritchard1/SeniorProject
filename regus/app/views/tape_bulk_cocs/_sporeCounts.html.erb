@@ -1,0 +1,79 @@
+
+  <div id="samples">
+
+    <div class="row">
+      <div class="large-12 columns" style="padding-left: 2%; padding-right: 2%;">
+        <div class="job_type">
+          <h4 id="label_style">Submit Sample Spore Counts</h4>
+        </div>
+      </div>
+    </div>
+
+    <% missing_spore_count = [] %>
+    <% @tape_bulk_coc.tape_bulk_coc_samples.each do |cur| %>
+      <% if !cur.spore_type_count %>
+        <% missing_spore_count.push(cur) %>
+      <% end %>
+    <% end %>
+
+    <% if missing_spore_count.empty? %>
+      <div class="row">
+        <div class="large-10 large-centered columns">
+          <br>
+          <div class="callout success">
+            <h5 style="text-align: center;">All Samples Have Spore Counts</h5>
+            <!-- <p>It has an easy to override visual style, and is appropriately subdued.</p> -->
+            <!-- <a href="#">It's dangerous to go alone, take this.</a> -->
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="row">
+        <div class="large-12 columns">
+          <% if @tape_bulk_coc.tape_bulk_coc_samples.any? %>
+            <div class="scroll_box" style="height: 75vh; overflow: auto;">
+              <div class="large-12 columns"> 
+                <br>
+                <% @tape_bulk_coc.tape_bulk_coc_samples.each do |cur| %>  
+                  <% if !cur.spore_type_count %>
+                    <div class="xrf_sample" id="<%=cur.sample_num%>">             
+                      <div class="row">
+                        <div class="large-3 columns">
+                          <div class="job_type">
+                            <h5 id="job">Sample: <%= cur.sample_num %></h5>
+                          </div>
+                        </div>
+                        <div class="large-3 columns end">
+                          <%= link_to 'Add Spore Count', new_spore_type_count_path(:tape_bulk_coc_sample_id=>cur.id), :remote=>true,  :id => "new_spore_count", class: "tiny button expanded" %>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="large-8 columns">
+                          <div class="label_style">
+                            <h5 id="label_style">Location</h5>
+                          </div>
+                          <div class="text">
+                            <h6><%= cur.location %></h6>
+                          </div>
+                        </div>
+                        <div class="large-4 columns">
+                          <div class="label_style">
+                            <h5 id="label_style">Collection Type</h5>
+                          </div>
+                          <div class="text">
+                            <h6><%= cur.collection_type %></h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <br><br>
+                  <% end %>
+                <% end %>
+              </div>
+            </div> <!-- CLOSING SCROLL BOX -->
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>

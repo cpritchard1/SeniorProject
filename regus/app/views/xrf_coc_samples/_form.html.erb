@@ -1,0 +1,97 @@
+<div id="new_sample">
+
+  <div class="xrf_coc_sample_new">
+
+    <div class="xrf_coc">
+      <br>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="job_type">
+            <h4 id="label_style">New Lead Sample</h4>
+          </div>
+        </div>
+      </div>
+
+      <%= form_for(@xrf_coc_sample, remote: true, :html => {"data-abide" => ''}) do |f| %>
+
+        <div class="row">
+          <div class="large-4 columns">
+            <h5 id="job">Sample: <%=@sample_number%> </h5>
+            <%= f.hidden_field :sample_num, :value=>@sample_number %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-8 columns">
+            <div class="label_style">
+              <h5 id="label_style">Location</h5>
+            </div>
+            <%= f.text_field :location, :placeholder=>"Sample Location", required: true, autofocus: true %>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style">Reading</h5>
+            </div>
+            <%= f.text_field :reading, :placeholder=>"Sample Reading", required: true %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">Material</h5>
+            </div>
+            <%= f.select :material, options_for_select(@material, @material_selected) %>
+          </div>
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">Color</h5>
+            </div>
+            <%= f.select :color, options_for_select(@color, @color_selected) %>
+          </div>
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">Condition</h5>
+            </div>
+            <%= f.select :condition, options_for_select(@condition, @condition_selected) %>
+          </div>
+          <div class="large-3 columns">
+            <div class="label_style">
+              <h5 id="label_style">Category</h5>
+            </div>
+            <%= f.select :category, options_for_select(@category, @category_selected) %>
+          </div>
+          <div class="hidden">
+            <%= f.hidden_field :xrf_coc_id, :value=>@xrf_coc.id %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-3 columns">
+            <div class="actions">
+              <%= f.submit "Save Sample", class: "small button expanded" %>
+            </div>
+          </div>
+          <% if @notice %>
+            <div class="large-5 columns end" style="text-align: center;">
+              <div class="callout success" id="success">
+                  <%= @notice %>
+              </div>
+            </div>
+          <% end %>
+          <div class="large-5 columns end">
+            <div data-abide-error class="alert callout" style="display: none; text-align: center;">
+              <p><i class="fi-alert"></i> No fields can be blank! </p>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+  </div> <!-- CLOSING PAGE FORMATTING -->
+
+  <script>
+    setTimeout(function() {
+        $('#success').fadeOut('slow');
+    }, 2000); // <-- time in milliseconds
+  </script>
+
+</div>
+

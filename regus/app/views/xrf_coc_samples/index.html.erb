@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Xrf Coc Samples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sample num</th>
+      <th>Location</th>
+      <th>Material</th>
+      <th>Color</th>
+      <th>Condition</th>
+      <th>Reading</th>
+      <th>Category</th>
+      <th>Xrf coc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @xrf_coc_samples.each do |xrf_coc_sample| %>
+      <tr>
+        <td><%= xrf_coc_sample.sample_num %></td>
+        <td><%= xrf_coc_sample.location %></td>
+        <td><%= xrf_coc_sample.material %></td>
+        <td><%= xrf_coc_sample.color %></td>
+        <td><%= xrf_coc_sample.condition %></td>
+        <td><%= xrf_coc_sample.reading %></td>
+        <td><%= xrf_coc_sample.category %></td>
+        <td><%= xrf_coc_sample.xrf_coc %></td>
+        <td><%= link_to 'Show', xrf_coc_sample %></td>
+        <td><%= link_to 'Edit', edit_xrf_coc_sample_path(xrf_coc_sample) %></td>
+        <td><%= link_to 'Destroy', xrf_coc_sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Xrf coc sample', new_xrf_coc_sample_path %>

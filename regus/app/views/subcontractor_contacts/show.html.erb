@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subcontractor_contact.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @subcontractor_contact.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @subcontractor_contact.email %>
+</p>
+
+<p>
+  <strong>Subcontractor:</strong>
+  <%= @subcontractor_contact.subcontractor %>
+</p>
+
+<%= link_to 'Edit', edit_subcontractor_contact_path(@subcontractor_contact) %> |
+<%= link_to 'Back', subcontractor_contacts_path %>

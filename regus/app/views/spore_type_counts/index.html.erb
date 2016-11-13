@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Spore Type Counts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agrocybe</th>
+      <th>Alternaria</th>
+      <th>Ascospores</th>
+      <th>Aspergillus</th>
+      <th>Aureobasidium</th>
+      <th>Basidiospores</th>
+      <th>Bipolaris</th>
+      <th>Botrytis</th>
+      <th>Chaetomium</th>
+      <th>Cercospora</th>
+      <th>Cladosporium</th>
+      <th>Curvularia</th>
+      <th>Epicoccum</th>
+      <th>Fusarium</th>
+      <th>Myxomycetes</th>
+      <th>Nigrospora</th>
+      <th>Oidium</th>
+      <th>Pithomyces</th>
+      <th>Pithomyces</th>
+      <th>Pollen</th>
+      <th>Rust</th>
+      <th>Spegazzina</th>
+      <th>Stachybotrys</th>
+      <th>Torula</th>
+      <th>Tetraploa</th>
+      <th>Ulocladium</th>
+      <th>Unidentifiable</th>
+      <th>Fibrous</th>
+      <th>Hyphal</th>
+      <th>Insect</th>
+      <th>Tape bulk coc sample</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spore_type_counts.each do |spore_type_count| %>
+      <tr>
+        <td><%= spore_type_count.agrocybe %></td>
+        <td><%= spore_type_count.alternaria %></td>
+        <td><%= spore_type_count.ascospores %></td>
+        <td><%= spore_type_count.aspergillus %></td>
+        <td><%= spore_type_count.aureobasidium %></td>
+        <td><%= spore_type_count.basidiospores %></td>
+        <td><%= spore_type_count.bipolaris %></td>
+        <td><%= spore_type_count.botrytis %></td>
+        <td><%= spore_type_count.chaetomium %></td>
+        <td><%= spore_type_count.cercospora %></td>
+        <td><%= spore_type_count.cladosporium %></td>
+        <td><%= spore_type_count.curvularia %></td>
+        <td><%= spore_type_count.epicoccum %></td>
+        <td><%= spore_type_count.fusarium %></td>
+        <td><%= spore_type_count.myxomycetes %></td>
+        <td><%= spore_type_count.nigrospora %></td>
+        <td><%= spore_type_count.oidium %></td>
+        <td><%= spore_type_count.pithomyces %></td>
+        <td><%= spore_type_count.pithomyces %></td>
+        <td><%= spore_type_count.pollen %></td>
+        <td><%= spore_type_count.rust %></td>
+        <td><%= spore_type_count.spegazzina %></td>
+        <td><%= spore_type_count.stachybotrys %></td>
+        <td><%= spore_type_count.torula %></td>
+        <td><%= spore_type_count.tetraploa %></td>
+        <td><%= spore_type_count.ulocladium %></td>
+        <td><%= spore_type_count.unidentifiable %></td>
+        <td><%= spore_type_count.fibrous %></td>
+        <td><%= spore_type_count.hyphal %></td>
+        <td><%= spore_type_count.insect %></td>
+        <td><%= spore_type_count.tape_bulk_coc_sample %></td>
+        <td><%= link_to 'Show', spore_type_count %></td>
+        <td><%= link_to 'Edit', edit_spore_type_count_path(spore_type_count) %></td>
+        <td><%= link_to 'Destroy', spore_type_count, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spore type count', new_spore_type_count_path %>

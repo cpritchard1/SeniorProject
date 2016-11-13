@@ -1,0 +1,1 @@
+json.array! @xrf_coc_samples, partial: 'xrf_coc_samples/xrf_coc_sample', as: :xrf_coc_sample

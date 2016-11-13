@@ -1,0 +1,71 @@
+
+<div id="new_sample">
+
+  <div class="xrf_coc_sample_new">
+
+      <div class="xrf_coc">
+        <br>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="job_type">
+              <h4 id="label_style">New Mold Sample</h4>
+            </div>
+          </div>
+        </div>
+
+        <%= form_for(@tape_bulk_coc_sample, remote: true, :html => {"data-abide" => ''}) do |f| %>
+
+          <div class="row">
+            <div class="large-4 columns">
+              <h5 id="job">Sample: <%=@sample_number%> </h5>
+              <%= f.hidden_field :sample_num, :value=>@sample_number %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-8 columns">
+              <div class="label_style">
+                <h5 id="label_style">Location</h5>
+              </div>
+              <%= f.text_field :location, :placeholder=>"Sample Location", required: true, autofocus: true %>
+            </div>
+            <div class="large-4 columns">
+              <div class="label_style">
+                <h5 id="label_style">Collection Type</h5>
+              </div>
+              <%= f.select :collection_type, options_for_select(@collection_types, @collection_selected) %>
+            </div>
+          </div>
+          <div class="hidden">
+            <%= f.hidden_field :tape_bulk_coc_id, :value=>@tape_bulk_coc.id %>
+          </div>
+          <div class="row">
+            <div class="large-3 columns">
+              <div class="actions">
+                <%= f.submit "Save Sample", class: "small button expanded" %>
+              </div>
+            </div>
+            <% if @notice %>
+              <div class="large-5 columns end">
+                <div class="callout success" id="success" style="text-align: center;">
+                    <%= @notice %>
+                </div>
+              </div>
+            <% end %>
+            <div class="large-5 columns end">
+              <div data-abide-error class="alert callout" style="display: none; text-align: center;">
+                <p><i class="fi-alert"></i> No fields can be blank! </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+  </div>
+
+  <script>
+    setTimeout(function() {
+        $('#success').fadeOut('slow');
+    }, 2000); // <-- time in milliseconds
+  </script>
+
+</div>

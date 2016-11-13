@@ -1,0 +1,1 @@
+json.partial! "lead_reports/lead_report", lead_report: @lead_report

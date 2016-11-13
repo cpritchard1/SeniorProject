@@ -1,0 +1,1 @@
+json.array! @subcontractor_contacts, partial: 'subcontractor_contacts/subcontractor_contact', as: :subcontractor_contact

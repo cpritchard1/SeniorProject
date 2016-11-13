@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Subcontractor Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Subcontractor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subcontractor_contacts.each do |subcontractor_contact| %>
+      <tr>
+        <td><%= subcontractor_contact.name %></td>
+        <td><%= subcontractor_contact.phone %></td>
+        <td><%= subcontractor_contact.email %></td>
+        <td><%= subcontractor_contact.subcontractor %></td>
+        <td><%= link_to 'Show', subcontractor_contact %></td>
+        <td><%= link_to 'Edit', edit_subcontractor_contact_path(subcontractor_contact) %></td>
+        <td><%= link_to 'Destroy', subcontractor_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subcontractor contact', new_subcontractor_contact_path %>

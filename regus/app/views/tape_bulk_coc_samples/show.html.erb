@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sample num:</strong>
+  <%= @tape_bulk_coc_sample.sample_num %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @tape_bulk_coc_sample.location %>
+</p>
+
+<p>
+  <strong>Collection type:</strong>
+  <%= @tape_bulk_coc_sample.collection_type %>
+</p>
+
+<p>
+  <strong>Tape bulk coc:</strong>
+  <%= @tape_bulk_coc_sample.tape_bulk_coc %>
+</p>
+
+<%= link_to 'Edit', edit_tape_bulk_coc_sample_path(@tape_bulk_coc_sample) %> |
+<%= link_to 'Back', tape_bulk_coc_samples_path %>

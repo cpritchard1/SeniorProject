@@ -1,0 +1,98 @@
+            <div class="row">
+              <div class="large-4 columns">
+                <div class="job_type">
+                  <h4 id="label_style">Laboratory Work</h4>
+                </div>
+                <div class="laboratory_img" id="image">
+                  <%= image_tag "laboratory.jpg" %>
+                </div>
+                <div class="new_job_type">
+                  <%= link_to "New Laboratory Work", new_job_type_path(:job_id=>@job.id, :job_type=>"Laboratory", :user_id=>current_user.id), class: "small button expanded" %>
+                </div>
+                
+                <% if @laboratory.any? %>
+                  <!-- <div class="table"> -->
+                    <table id="jobTypes">
+                      <thead id="jobTypes">
+                        <th>Created On</th>
+                        <th>Created By</th>
+                        <!-- <td colspan="1"></td> -->
+                      </thead>
+                      <tbody>
+                        <% @laboratory.reverse.each do |cur| %>
+                          <tr id="jobTypes">
+                            <td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+                            <td> <%= cur.user.username %> </td>
+                            <!-- <td>  link_to "View", cur, class: "sample" %> </td> -->
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  <!-- </div> closing table -->
+                <% end %> 
+              </div> <!-- closing columns -->
+              <div class="large-4 columns">
+                <div class="job_type">
+                  <h4 id="label_style">Inspection Work</h4>
+                </div>
+                <div class="inspection_img" id="image">
+                  <%= image_tag "inspection.jpg" %>
+                </div>
+                <div class="new_job_type">
+                  <%= link_to "New Inspection Work", new_job_type_path(:job_id=>@job.id, :job_type=>"Inspection", :user_id=>current_user.id), class: "small button expanded" %>
+                </div>
+
+                <% if @inspection.any? %>
+                  <!-- <div class="table"> -->
+                    <table id="jobTypes">
+                      <thead id="jobTypes">
+                        <td>Created On</td>
+                        <td>Created By</td>
+                        <!-- <td colspan="1"></td> -->
+                      </thead>
+                      <tbody>
+                        <% @inspection.reverse.each do |cur| %>
+                          <tr id="jobTypes">
+                            <td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+                            <td> <%= cur.user.username %> </td>
+                            <!-- <td>  link_to "View", cur %> </td> -->
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  <!-- </div> closing table -->
+                <% end %>
+              </div> <!-- closing columns -->
+              <div class="large-4 columns">
+                <div class="job_type">
+                  <h4 id="label_style">Clearance Work</h4>
+                </div>
+                <div class="clearance_img" id="image">
+                  <%= image_tag "clearance.jpg" %>
+                </div>
+                <div class="new_job_type">
+                  <%= link_to "New Clearance Work", new_job_type_path(:job_id=>@job.id, :job_type=>"Clearance", :user_id=>current_user.id), class: "small button expanded" %>
+                </div>
+
+                <% if @clearance.any? %>
+                  <!-- <div class="table"> -->
+                    <table id="jobTypes">
+                      <thead id="jobTypes">
+                        <td>Created On</td>
+                        <td>Created By</td>
+                        <!-- <td colspan="1"></td> -->
+                      </thead>
+                      <tbody>
+                        <% @clearance.reverse.each do |cur| %>
+                          <tr id="jobTypes">
+                            <td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+                            <td> <%= cur.user.username %> </td>
+                            <!-- <td>  link_to "View", cur %> </td> -->
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  <!-- </div> closing table -->
+                <% end %>
+              </div> <!-- closing columns -->
+            </div>

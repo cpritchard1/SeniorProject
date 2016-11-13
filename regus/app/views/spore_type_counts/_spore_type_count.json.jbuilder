@@ -1,0 +1,2 @@
+json.extract! spore_type_count, :id, :agrocybe, :alternaria, :ascospores, :aspergillus, :aureobasidium, :basidiospores, :bipolaris, :botrytis, :chaetomium, :cercospora, :cladosporium, :curvularia, :epicoccum, :fusarium, :myxomycetes, :nigrospora, :oidium, :pithomyces, :pithomyces, :pollen, :rust, :spegazzina, :stachybotrys, :torula, :tetraploa, :ulocladium, :unidentifiable, :fibrous, :hyphal, :insect, :tape_bulk_coc_sample_id, :created_at, :updated_at
+json.url spore_type_count_url(spore_type_count, format: :json)

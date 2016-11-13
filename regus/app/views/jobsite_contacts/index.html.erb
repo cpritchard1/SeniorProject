@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Jobsite Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Jobsite</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobsite_contacts.each do |jobsite_contact| %>
+      <tr>
+        <td><%= jobsite_contact.name %></td>
+        <td><%= jobsite_contact.phone %></td>
+        <td><%= jobsite_contact.email %></td>
+        <td><%= jobsite_contact.jobsite %></td>
+        <td><%= link_to 'Show', jobsite_contact %></td>
+        <td><%= link_to 'Edit', edit_jobsite_contact_path(jobsite_contact) %></td>
+        <td><%= link_to 'Destroy', jobsite_contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jobsite contact', new_jobsite_contact_path %>

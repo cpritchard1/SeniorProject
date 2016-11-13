@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-09-22 20:26:23
+  turnaround: MyString
+  cli_type_id: 
+  user_id: 
+
+two:
+  date: 2016-09-22 20:26:23
+  turnaround: MyString
+  cli_type_id: 
+  user_id: 
