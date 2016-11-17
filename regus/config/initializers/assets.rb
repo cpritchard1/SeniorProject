@@ -10,10 +10,14 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-ActionController::Base.asset_host = Proc.new { |source, request|
-  if request.env["REQUEST_PATH"].include? ".pdf"
-    "file://#{Rails.root.join('public')}"
-  else
-    "#{request.protocol}#{request.host_with_port}"
-  end
-}
+# ActionController::Base.asset_host = Proc.new { |source, request|
+#   if request.env["REQUEST_PATH"].include? ".pdf"
+#     "file://#{Rails.root.join('public')}"
+#   else
+#     "#{request.protocol}#{request.host_with_port}"
+#   end
+# }
+
+PDFKit.configure do |config|
+  config.root_url = "file://#{Rails.root.join('public')}/"
+end

@@ -74,7 +74,6 @@ class JobsController < ApplicationController
                     website: params[:job][:company][:website]
                     )
 
-
     @company_contact = CompanyContact.new(
                     id: params[:job][:company_contact][:id],
                     name: params[:job][:company_contact][:name],

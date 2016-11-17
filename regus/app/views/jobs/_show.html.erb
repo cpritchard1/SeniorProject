@@ -1,12 +1,23 @@
+<style>
+  table#job_info{
+    table-layout:fixed;
+    word-wrap:break-word;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+  }
+  td.test{
+    width: 85px;
+  }
+</style>
 
             <div class="row"> 
-              <div class="large-3 columns">
+              <div class="large-3 small-4 columns" >
                 <div class="job_links">
                   <h4 id="job"> <%="Job ID: #{@job.id}"%> </h4>
                 </div>
               </div>
 
-              <div class="large-4 columns end">
+              <div class="large-8 small-8 columns end">
                 <strong> Created On: </strong>
                 <span id="job"><%= @job.date.strftime("%I:%M %p, %b %d %Y") %></span> <br>
 
@@ -23,14 +34,14 @@
                   <h4 id="label_style">Company</h4>
                 </div>
                 <div class="table">
-                  <table>
+                  <table id="job_info">
                     <tr>
-                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info" class="test"><strong>Name</strong></td>
                       <td id="job_info"> <%= @job.company.name %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Phone</strong></td>
-                      <td id="job_info"> <%= @job.company.phone %> </td>
+                      <td id="job_info"> <%= number_to_phone(@job.company.phone, area_code: true) %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Street</strong></td>
@@ -65,14 +76,14 @@
                   <h4 id="label_style">Subcontractor</h4>
                 </div>
                 <div class="table">
-                  <table>
+                  <table id="job_info">
                     <tr >
-                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info" class="test"><strong>Name</strong></td>
                       <td id="job_info"> <%= @job.subcontractor.name %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Phone</strong></td>
-                      <td id="job_info"> <%= @job.subcontractor.phone %> </td>
+                      <td id="job_info"> <%= number_to_phone(@job.subcontractor.phone, area_code: true) %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Street</strong></td>
@@ -107,9 +118,9 @@
                   <h4 id="label_style">Jobsite</h4>
                 </div>
                 <div class="table">
-                  <table>
+                  <table id="job_info">
                     <tr>
-                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info" class="test"><strong>Name</strong></td>
                       <td id="job_info"> <%= @job.jobsite.name %> </td>
                     </tr>
                     <tr>
@@ -164,14 +175,14 @@
                   <h4 id="label_style">Company Contact</h4>
                 </div>
                 <div class="table">
-                  <table>
+                  <table id="job_info">
                     <tr>
-                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info" class="test"><strong>Name</strong></td>
                       <td id="job_info"> <%= @job.company_contact.name %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Phone</strong></td>
-                      <td id="job_info"> <%= @job.company_contact.phone %> </td>
+                      <td id="job_info"> <%= number_to_phone(@job.company_contact.phone, area_code: true) %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Email</strong></td>
@@ -186,14 +197,14 @@
                   <h4 id="label_style">Subcontractor Contact</h4>
                 </div>
                 <div class="table">
-                  <table>
+                  <table id="job_info">
                     <tr>
-                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info" class="test"><strong>Name</strong></td>
                       <td id="job_info"> <%= @job.subcontractor_contact.name %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Phone</strong></td>
-                      <td id="job_info"> <%= @job.subcontractor_contact.phone %> </td>
+                      <td id="job_info"> <%= number_to_phone(@job.subcontractor_contact.phone, area_code: true) %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Email</strong></td>
@@ -208,14 +219,14 @@
                   <h4 id="label_style">Jobsite Contact</h4>
                 </div>
                 <div class="table">
-                  <table>
+                  <table id="job_info">
                     <tr>
-                      <td id="job_info"><strong>Name</strong></td>
+                      <td id="job_info" class="test"><strong>Name</strong></td>
                       <td id="job_info"> <%= @job.jobsite_contact.name %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Phone</strong></td>
-                      <td id="job_info"> <%= @job.jobsite_contact.phone %> </td>
+                      <td id="job_info"> <%= number_to_phone(@job.jobsite_contact.phone, area_code: true) %> </td>
                     </tr>
                     <tr>
                       <td id="job_info"><strong>Email</strong></td>

@@ -48,419 +48,420 @@
   </body>
 </html>
 
-  <style>
-/*******************************
-*       HTML TAG STYLING       *
-********************************/
+<style>
+  /*******************************
+  *       HTML TAG STYLING       *
+  ********************************/
 
-    @keyframes fadein{
-       from{opacity:0;}
-       to{opacity:1;}
-    }
-    @keyframes fadeout{
-       from{opacity:1;}
-       to{opacity:0;}
-    }
+      @keyframes fadein{
+         from{opacity:0;}
+         to{opacity:1;}
+      }
+      @keyframes fadeout{
+         from{opacity:1;}
+         to{opacity:0;}
+      }
 
-    div#main-content, .tabs-panel.is-active, .callout.success, .alert.callout, div#samples{
-       animation: fadein 1s;
-    }
-    li#job_links.tabs-title.is-active, div#spore_count
-    {
-      animation: fadein 1s;
-    }
-    .new_lead_report
-    {
-      animation: fadein 2s;
-    }
-    .callout.success, .alert.callout
-    {
-      border-radius: 10px;
-      box-shadow: 0px 2px 6px 0px lightgray;
-    }
+      div#main-content, .tabs-panel.is-active, .callout.success, .alert.callout, div#samples{
+         animation: fadein 1s;
+      }
+      li#job_links.tabs-title.is-active, div#spore_count
+      {
+        animation: fadein 1s;
+      }
+      .new_lead_report
+      {
+        animation: fadein 2s;
+      }
+      .callout.success, .alert.callout
+      {
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px 0px lightgray;
+      }
 
 
 
-    h4#label_style, h5#label_style, a.job_link
-    {
-      font-family: 'Lobster', cursive;
-    }
+      h4#label_style, h5#label_style, a.job_link
+      {
+        font-family: 'Lobster', cursive;
+      }
 
-    h6#signature, h4#job, h5#job, h6#job, a, input, select, input::-webkit-input-placeholder, button
-    {
-      font-family: 'Raleway', sans-serif;
-    }
+      h6#signature, h4#job, h5#job, h6#job, a, input, select, input::-webkit-input-placeholder, button
+      {
+        font-family: 'Raleway', sans-serif;
+      }
 
-    td,tr,span#job
-    {
-      font-family: 'Raleway', sans-serif;
-      font-style: light;
-      font-size: 15px;
-    }
+      td,tr,span#job
+      {
+        font-family: 'Raleway', sans-serif;
+        font-style: light;
+        font-size: 15px;
+      }
 
-    table#jobsTable, table#reportsTable, table#jobTypes{
-      box-shadow: 0px 2px 6px 0px lightgray;
-    }
-    thead#jobsTable, thead#reportsTable, thead#jobTypes{
-      background: #ff6600;      
-      color: white;
-      opacity: 0.5;
-    }
-    tbody#jobsTable, tbody#reportsTable, tbody#jobTypes{
-      color: gray;
-    }
-    tr#jobsTable, tr#reportsTable, .dataTables_empty, tr#jobTypes{
-      background: white;
-    }
-    tr#jobsTable:hover, tr#reportsTable:hover, tr#jobTypes:hover
-    {
-      color: black;
-      background: lightgray;
-    }
-    table, tbody{
-      border: transparent;
-      color: gray;
-    }
+      table#jobsTable, table#reportsTable, table#jobTypes{
+        box-shadow: 0px 2px 6px 0px lightgray;
+      }
+      thead#jobsTable, thead#reportsTable, thead#jobTypes{
+        background: #ff6600;      
+        color: white;
+        opacity: 0.5;
+      }
+      tbody#jobsTable, tbody#reportsTable, tbody#jobTypes{
+        color: gray;
+      }
+      tr#jobsTable, tr#reportsTable, .dataTables_empty, tr#jobTypes{
+        background: white;
+      }
+      tr#jobsTable:hover, tr#reportsTable:hover, tr#jobTypes:hover
+      {
+        color: black;
+        background: lightgray;
+      }
+      table, tbody{
+        border: transparent;
+        color: gray;
+        /*border: thin solid black;*/
+      }
 
-    /* New Company Fields */
-    input#job_company_name, input#phone_element,
-    input#street_element, input#city_element,
-    input#zip_element, input#email_element, input#website_element,
-    /* New Subcontractor Fields */
-    input#job_subcontractor_name, input#s_phone_element,
-    input#s_street_element, input#s_city_element,
-    input#s_zip_element, input#s_email_element, input#s_website_element,
-    /* New Jobsite Fields */
-    input#job_jobsite_name, input#j_phone_element,
-    input#j_street_element, input#j_city_element,
-    input#j_zip_element, input#j_email_element, input#j_website_element,
-    /* New Company Contact Fields */
-    input#job_company_contact_name, input#cc_phone_element,
-    input#cc_email_element,
-    /* New Subcontractor Contact Fields */
-    input#job_subcontractor_contact_name, input#sc_phone_element,
-    input#sc_email_element,
-    /* New Jobsite Contact Fields */
-    input#job_jobsite_contact_name, input#jc_phone_element,
-    input#jc_email_element,
-    input#tape_bulk_coc_sample_location,
-    /* */
-    input#tape_bulk_coc_sample_location,
-    input#xrf_coc_sample_location,
-    input#xrf_coc_sample_reading
-    {
-      border-radius: 5px;
-      -webkit-box-shadow: 0 8px 6px -6px lightgray;
-      -moz-box-shadow: 0 8px 6px -6px lightgray;
-      box-shadow: 0 8px 6px -6px lightgray;
-    }
-
-    /* Format All Select Boxes */
-    select{
-       box-shadow: 0 8px 6px -6px lightgray;
-       border-radius: 5px;
-    }
-/*    .selectize-control.single, .selectize-input, select#xrf_coc_turnaround-selectized{
-        height: 36px;
-    }
-    .selectize-input{
-        box-shadow: 0 8px 6px -6px lightgray;
+      /* New Company Fields */
+      input#job_company_name, input#phone_element,
+      input#street_element, input#city_element,
+      input#zip_element, input#email_element, input#website_element,
+      /* New Subcontractor Fields */
+      input#job_subcontractor_name, input#s_phone_element,
+      input#s_street_element, input#s_city_element,
+      input#s_zip_element, input#s_email_element, input#s_website_element,
+      /* New Jobsite Fields */
+      input#job_jobsite_name, input#j_phone_element,
+      input#j_street_element, input#j_city_element,
+      input#j_zip_element, input#j_email_element, input#j_website_element,
+      /* New Company Contact Fields */
+      input#job_company_contact_name, input#cc_phone_element,
+      input#cc_email_element,
+      /* New Subcontractor Contact Fields */
+      input#job_subcontractor_contact_name, input#sc_phone_element,
+      input#sc_email_element,
+      /* New Jobsite Contact Fields */
+      input#job_jobsite_contact_name, input#jc_phone_element,
+      input#jc_email_element,
+      input#tape_bulk_coc_sample_location,
+      /* */
+      input#tape_bulk_coc_sample_location,
+      input#xrf_coc_sample_location,
+      input#xrf_coc_sample_reading
+      {
         border-radius: 5px;
-        height: 36px;
-        padding-top: none;
-    }
-    .selectize-dropdown{
-      padding-top: 3%;
-    }*/
+        -webkit-box-shadow: 0 8px 6px -6px lightgray;
+        -moz-box-shadow: 0 8px 6px -6px lightgray;
+        box-shadow: 0 8px 6px -6px lightgray;
+      }
 
-/*******************************
-*    DIFFERENT PAGE PADDING    *
-********************************/
-    .show_tape_bulk_coc,
-    .tape_bulk_coc_new,
-    .tape_bulk_sample_new,
-    /*.spore_counts_new,*/
-    .show_xrf_coc,
-    /*.xrf_coc_new,*/
-    .xrf_coc_sample_new,
-    .new_lead_report,
-    .report_preview
-    {
-      padding-left: 5%;
-      padding-right: 5%;
-    }
-    .submit 
-    {
-      padding-right: 20%; 
-      padding-left: 20%;
-    }
+      /* Format All Select Boxes */
+      select{
+         box-shadow: 0 8px 6px -6px lightgray;
+         border-radius: 5px;
+      }
+  /*    .selectize-control.single, .selectize-input, select#xrf_coc_turnaround-selectized{
+          height: 36px;
+      }
+      .selectize-input{
+          box-shadow: 0 8px 6px -6px lightgray;
+          border-radius: 5px;
+          height: 36px;
+          padding-top: none;
+      }
+      .selectize-dropdown{
+        padding-top: 3%;
+      }*/
 
-    .index_page_format,
-    .login_page_format,
-    .signup_page_format ,
-    .home_page_format
-    {
-      padding-top: 10%;
-      padding-right: 30%;
-      padding-left: 30%;
-      padding-bottom: 30%;
-    }
+  /*******************************
+  *    DIFFERENT PAGE PADDING    *
+  ********************************/
+      .show_tape_bulk_coc,
+      .tape_bulk_coc_new,
+      .tape_bulk_sample_new,
+      /*.spore_counts_new,*/
+      .show_xrf_coc,
+      /*.xrf_coc_new,*/
+      .xrf_coc_sample_new,
+      .new_lead_report,
+      .report_preview
+      {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      .submit 
+      {
+        padding-right: 20%; 
+        padding-left: 20%;
+      }
 
-    .top_padding
-    {
-      padding-bottom: 1.5%; /* padding for small icon at top of page, below menu bar */
-    }
+      .index_page_format,
+      .login_page_format,
+      .signup_page_format ,
+      .home_page_format
+      {
+        padding-top: 10%;
+        padding-right: 30%;
+        padding-left: 30%;
+        padding-bottom: 30%;
+      }
 
-/*******************************
-*       ACCORDION STYLING      *
-********************************/
-/*    .accordion{
-      background: lightgray;      
-    } 
-    a.accordion-title{
-      color: black;
-      font-size: 18px;
-      font-family: 'Raleway', sans-serif;
-    }
-    a.accordion-title:hover{
-      color: orange;
-      box-shadow: 0px 5px 5px lightgray;
+      .top_padding
+      {
+        padding-bottom: 1.5%; /* padding for small icon at top of page, below menu bar */
+      }
 
-    }*/
+  /*******************************
+  *       ACCORDION STYLING      *
+  ********************************/
+  /*    .accordion{
+        background: lightgray;      
+      } 
+      a.accordion-title{
+        color: black;
+        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+      }
+      a.accordion-title:hover{
+        color: orange;
+        box-shadow: 0px 5px 5px lightgray;
 
-
-/*******************************
-*         JOBS SHOW PAGE       *
-********************************/
-    .tabs-title#job_links{
-      background-color: lightblue;
-    }
-    span{
-      font-family: 'Raleway', sans-serif;
-    }
-    td#job_info{
-      background-color: white;
-    }
-
-/*******************************
-*    REPORT DISPLAY STYLING    *
-********************************/
-    .image
-    {
-      text-align: center;
-    }
-    .footer
-    {
-      color: grey;
-      font-family: 'Raleway', sans-serif;
-    }
-    .footer#addr
-    {
-      text-align: center;
-      font-family: 'Raleway', sans-serif;
-    }
-
-/*******************************
-*     MOLD TAPE/BULK STYLING   *
-********************************/
-    .spore_count
-    {
-      /*border: thin solid black;*/
-      border-radius: 10px;
-      padding: 2%;
-      /*background-color: #e6e6e6;*/
-      /*box-shadow: 0px 0px 5px black;*/
-      /*box-shadow: 0 8px 6px -6px lightgray;*/
-      box-shadow: 0px 2px 6px 2px lightgrey;
-      color: black;
-    }
-
-    .missing_spore_type 
-    {
-      padding: 1%;
-      border: solid #e6e6e6;
-      border-radius: 10px;
-      box-shadow: 0px 0px 5px red;
-      color: black;
-    }
-
-    .sample_message
-    {
-      text-align: center
-    }
-
-    #spore_type_count_agrocybe, #spore_type_count_alternaria, #spore_type_count_ascospores, #spore_type_count_aspergillus,
-    #spore_type_count_aureobasidium, #spore_type_count_basidiospores, #spore_type_count_bipolaris, #spore_type_count_botrytis,
-    #spore_type_count_chaetomium, #spore_type_count_cercospora, #spore_type_count_cladosporium, #spore_type_count_curvularia, 
-    #spore_type_count_epicoccum, #spore_type_count_fusarium, #spore_type_count_myxomycetes, #spore_type_count_nigrospora, 
-    #spore_type_count_oidium, #spore_type_count_pithomyces, #spore_type_count_pollen, #spore_type_count_rust, #spore_type_count_spegazzina,
-    #spore_type_count_stachybotrys, #spore_type_count_torula, #spore_type_count_, #spore_type_count_tetraploa, #spore_type_count_ulocladium,
-    #spore_type_count_unidentifiable, #spore_type_count_fibrous, #spore_type_count_hyphal, #spore_type_count_insect
-    {
-      height: 30px;
-      font-size: 10px;
-    }
+      }*/
 
 
-/*******************************
-*        LEAD XRF STYLING      *
-********************************/
-    .xrf_coc 
-    {
-/*      border: solid #004080;
-      border-radius: 10px;
-      box-shadow: 0px 0px 5px black;*/
-    }
+  /*******************************
+  *         JOBS SHOW PAGE       *
+  ********************************/
+      .tabs-title#job_links{
+        background-color: lightblue;
+      }
+      span{
+        font-family: 'Raleway', sans-serif;
+      }
+      td#job_info{
+        background-color: white;
+      }
 
-    .xrf_sample
-    {
-      padding: 1%;
-      /*background: #f2f2f2;*/
-      /*border: solid #004080;*/
-      border-radius: 10px;
-      /*box-shadow: 0 8px 6px -6px gray;*/
-      box-shadow: 0px 2px 6px 2px lightgrey;
-      /*color: black;*/
-      opacity: 0.70;
-    }
-    .xrf_sample:hover
-    {
-      opacity: 1;
-    }
+  /*******************************
+  *    REPORT DISPLAY STYLING    *
+  ********************************/
+      .image
+      {
+        text-align: center;
+      }
+      .footer
+      {
+        color: grey;
+        font-family: 'Raleway', sans-serif;
+      }
+      .footer#addr
+      {
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+      }
 
-    .text 
-    {
-      border-radius: 10px;
-      padding-left: 10px;
-      /*background: -webkit-linear-gradient(-90deg, white, lightgray); /* For Safari 5.1 to 6.0 */
-      /*background: -o-linear-gradient(-90deg, white, lightgray);  For Opera 11.1 to 12.0 */
-      /*background: -moz-linear-gradient(-90deg, white, lightgray); /* For Firefox 3.6 to 15 */
-      /*background: linear-gradient(-90deg, white, lightgray); /* Standard syntax */
-    }
+  /*******************************
+  *     MOLD TAPE/BULK STYLING   *
+  ********************************/
+      .spore_count
+      {
+        /*border: thin solid black;*/
+        border-radius: 10px;
+        padding: 2%;
+        /*background-color: #e6e6e6;*/
+        /*box-shadow: 0px 0px 5px black;*/
+        /*box-shadow: 0 8px 6px -6px lightgray;*/
+        box-shadow: 0px 2px 6px 2px lightgrey;
+        color: black;
+      }
+
+      .missing_spore_type 
+      {
+        padding: 1%;
+        border: solid #e6e6e6;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px red;
+        color: black;
+      }
+
+      .sample_message
+      {
+        text-align: center
+      }
+
+      #spore_type_count_agrocybe, #spore_type_count_alternaria, #spore_type_count_ascospores, #spore_type_count_aspergillus,
+      #spore_type_count_aureobasidium, #spore_type_count_basidiospores, #spore_type_count_bipolaris, #spore_type_count_botrytis,
+      #spore_type_count_chaetomium, #spore_type_count_cercospora, #spore_type_count_cladosporium, #spore_type_count_curvularia, 
+      #spore_type_count_epicoccum, #spore_type_count_fusarium, #spore_type_count_myxomycetes, #spore_type_count_nigrospora, 
+      #spore_type_count_oidium, #spore_type_count_pithomyces, #spore_type_count_pollen, #spore_type_count_rust, #spore_type_count_spegazzina,
+      #spore_type_count_stachybotrys, #spore_type_count_torula, #spore_type_count_, #spore_type_count_tetraploa, #spore_type_count_ulocladium,
+      #spore_type_count_unidentifiable, #spore_type_count_fibrous, #spore_type_count_hyphal, #spore_type_count_insect
+      {
+        height: 30px;
+        font-size: 10px;
+      }
 
 
-/*******************************
-*       MAP MODAL STYLING      *
-********************************/
-    .map
-    {
-      text-align: center;
-    }
-    iframe
-    {
-      box-shadow: 0px 2px 6px 2px grey;
-    }
+  /*******************************
+  *        LEAD XRF STYLING      *
+  ********************************/
+      .xrf_coc 
+      {
+  /*      border: solid #004080;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px black;*/
+      }
+
+      .xrf_sample
+      {
+        padding: 1%;
+        /*background: #f2f2f2;*/
+        /*border: solid #004080;*/
+        border-radius: 10px;
+        /*box-shadow: 0 8px 6px -6px gray;*/
+        box-shadow: 0px 2px 6px 2px lightgrey;
+        /*color: black;*/
+        opacity: 0.70;
+      }
+      .xrf_sample:hover
+      {
+        opacity: 1;
+      }
+
+      .text 
+      {
+        border-radius: 10px;
+        padding-left: 10px;
+        /*background: -webkit-linear-gradient(-90deg, white, lightgray); /* For Safari 5.1 to 6.0 */
+        /*background: -o-linear-gradient(-90deg, white, lightgray);  For Opera 11.1 to 12.0 */
+        /*background: -moz-linear-gradient(-90deg, white, lightgray); /* For Firefox 3.6 to 15 */
+        /*background: linear-gradient(-90deg, white, lightgray); /* Standard syntax */
+      }
 
 
-/*******************************
-*      FOUNDATION BUTTONS      *
-********************************/
-    .button 
-    {
-      border: thin solid lightgray;
-      border-radius: 10px;
-      background-color: lightgray;
-      /*text-shadow: 1px 1px white;*/
-      color: black;
-      opacity: 0.5;
-    }
-    .button:hover,
-    .button:focus 
-    {
-      background-color: #ff6600;
-      box-shadow: 0px 2px 6px 2px lightgrey;
-      border: thin solid white;
-      opacity: 1;
-      color: white;
-    }
-    .button:visited
-    {
-      color: black;
-    }
-    .button:visited:hover
-    {
-      color: white;
-    }
+  /*******************************
+  *       MAP MODAL STYLING      *
+  ********************************/
+      .map
+      {
+        text-align: center;
+      }
+      iframe
+      {
+        box-shadow: 0px 2px 6px 2px grey;
+      }
 
-/*******************************
-*                              *
-********************************/
-/*    .company
-    {
-      padding-top: 2%;
-      padding-left: 2%;
-      padding-right: 2%;
-      padding-bottom: 1%;
-      border: solid gray;
-      border-radius: 10px;
-      box-shadow: 3px 2px 5px gray;
-      background-color: #e6e6e6;
-    }*/
 
-    .label_style
-    {
-      border-radius: 10px;
-      color: white;
-      padding-left: 10px;
-      background: -webkit-linear-gradient(-90deg, #e6e6e6, #ff6600); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(-90deg, #e6e6e6, #ff6600); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(-90deg, #e6e6e6, #ff6600); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(-90deg, #e6e6e6, #ff6600); /* Standard syntax */
-    }
+  /*******************************
+  *      FOUNDATION BUTTONS      *
+  ********************************/
+      .button 
+      {
+        border: thin solid lightgray;
+        border-radius: 10px;
+        background-color: lightgray;
+        /*text-shadow: 1px 1px white;*/
+        color: black;
+        opacity: 0.5;
+      }
+      .button:hover,
+      .button:focus 
+      {
+        background-color: #ff6600;
+        box-shadow: 0px 2px 6px 2px lightgrey;
+        border: thin solid white;
+        opacity: 1;
+        color: white;
+      }
+      .button:visited
+      {
+        color: black;
+      }
+      .button:visited:hover
+      {
+        color: white;
+      }
 
-    .job_type
-    {
-      border-radius: 10px;
-      color: white;
-      padding-left: 10px;
-      background: -webkit-linear-gradient(-90deg, white, #004080); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(-90deg, white, #004080); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(-90deg, white, #004080); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(-90deg, white, #004080); /* Standard syntax */
-    }
+  /*******************************
+  *                              *
+  ********************************/
+  /*    .company
+      {
+        padding-top: 2%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 1%;
+        border: solid gray;
+        border-radius: 10px;
+        box-shadow: 3px 2px 5px gray;
+        background-color: #e6e6e6;
+      }*/
 
-    .job_links
-    {
-      border-radius: 10px;
-      color: white;
-      padding-left: 10px;
-      background: -webkit-linear-gradient(-90deg, white, gray); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(-90deg, white, gray); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(-90deg, white, gray); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(-90deg, white, gray); /* Standard syntax */
-    }
+      .label_style
+      {
+        border-radius: 10px;
+        color: white;
+        padding-left: 10px;
+        background: -webkit-linear-gradient(-90deg, #e6e6e6, #ff6600); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(-90deg, #e6e6e6, #ff6600); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(-90deg, #e6e6e6, #ff6600); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(-90deg, #e6e6e6, #ff6600); /* Standard syntax */
+      }
 
-    .error
-    {
-      color: red;
-      padding-left: 2%;
-      font-family: 'Raleway', sans-serif;
-    }
+      .job_type
+      {
+        border-radius: 10px;
+        color: white;
+        padding-left: 10px;
+        background: -webkit-linear-gradient(-90deg, white, #004080); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(-90deg, white, #004080); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(-90deg, white, #004080); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(-90deg, white, #004080); /* Standard syntax */
+      }
 
-    .job_link
-    {
-      color: white;
-    }
+      .job_links
+      {
+        border-radius: 10px;
+        color: white;
+        padding-left: 10px;
+        background: -webkit-linear-gradient(-90deg, white, gray); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(-90deg, white, gray); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(-90deg, white, gray); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(-90deg, white, gray); /* Standard syntax */
+      }
 
-    .asbestos_img,
-    .lead_img,
-    .mold_img,
-    .bacteria_img
-    {
-      border-radius: 10px;
-      box-shadow: 0px 2px 6px 2px grey;
-      height: 150px;
-      overflow: hidden;
-    }
-    .laboratory_img,
-    .inspection_img,
-    .clearance_img
-    {
-      border-radius: 10px;
-      /*box-shadow: 0px 2px 6px 2px grey;*/
-      height: 50px;
-      overflow: hidden;
-      opacity: 0.5;
-    }
+      .error
+      {
+        color: red;
+        padding-left: 2%;
+        font-family: 'Raleway', sans-serif;
+      }
 
-  </style>
+      .job_link
+      {
+        color: white;
+      }
+
+      .asbestos_img,
+      .lead_img,
+      .mold_img,
+      .bacteria_img
+      {
+        border-radius: 10px;
+        box-shadow: 0px 2px 6px 2px grey;
+        height: 150px;
+        overflow: hidden;
+      }
+      .laboratory_img,
+      .inspection_img,
+      .clearance_img
+      {
+        border-radius: 10px;
+        /*box-shadow: 0px 2px 6px 2px grey;*/
+        height: 50px;
+        overflow: hidden;
+        opacity: 0.5;
+      }
+
+</style>
