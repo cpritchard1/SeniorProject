@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :mycometer_cocs
   get 'xrf_cocs/reports/reload/:id' => 'xrf_cocs#reload', :as => :reload_reports
   resources :all_reports
   resources :lead_report_negs

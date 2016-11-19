@@ -1,0 +1,2 @@
+json.extract! mycometer_coc, :id, :date, :turnaround, :mold_air, :building_type, :sampling_method, :ambient_temp, :reaction_time, :liters_minute, :duration, :job_type, :cli_type, :job_id, :user_id, :created_at, :updated_at
+json.url mycometer_coc_url(mycometer_coc, format: :json)

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-11-18 14:46:26
+  turnaround: MyString
+  mold_air: MyString
+  building_type: MyString
+  sampling_method: MyString
+  ambient_temp: 1
+  reaction_time: MyString
+  liters_minute: 1
+  duration: MyString
+  job_type: MyString
+  cli_type: MyString
+  job_id: 
+  user_id: 
+
+two:
+  date: 2016-11-18 14:46:26
+  turnaround: MyString
+  mold_air: MyString
+  building_type: MyString
+  sampling_method: MyString
+  ambient_temp: 1
+  reaction_time: MyString
+  liters_minute: 1
+  duration: MyString
+  job_type: MyString
+  cli_type: MyString
+  job_id: 
+  user_id: 

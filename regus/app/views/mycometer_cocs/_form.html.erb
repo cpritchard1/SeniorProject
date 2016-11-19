@@ -1,0 +1,214 @@
+<div class="xrf_coc_new">
+  <div class="xrf_coc">
+    <div class="row">
+      <div class="large-12 columns">  
+        <div class="job_type">
+          <h4 id="label_style"><%= @mycometer_coc.cli_type %> Mycometer COC  - <%= @mycometer_coc.job_type %></h4>
+        </div>
+      </div>
+    </div>
+
+      <%= form_for(@mycometer_coc, :html => {"data-abide" => ''}) do |f| %>
+        <div class="row">
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style">Sample Date</h5> 
+            </div>
+            <div class="text">
+              <h5><%= @mycometer_coc.date.strftime("%b %d %Y") %> </h5>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style"> Sample Time </h5>
+            </div>
+            <div class="text">
+              <h5> <%= @mycometer_coc.date.strftime("%I:%M %p") %> </h5>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="label_style">
+              <h5 id="label_style">Turn Around Time </h5>
+            </div>
+            <%= f.select :turnaround, options_for_select(@turnaround) %><br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns"> 
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Mold Air </h5>
+              </div>
+              <%= f.select :mold_air, options_for_select(@mold_air) %>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Building Type </h5>
+              </div>
+              <%= f.select :building_type, options_for_select(@building_type) %>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Sampling Method </h5>
+              </div>
+              <%= f.select :sampling_method, options_for_select(@sampling_method) %>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Test Unit </h5>
+              </div>
+              <%= f.select :test_unit, options_for_select(@test_unit) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="job_type">
+              <h5 id="label_style"> Analytical Data </h5>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Ambient Temperature </h5>
+              </div>
+              <%= f.select :ambient_temp, options_for_select(@ambient_temp), include_blank: "Choose Temp...", required: true %>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Reaction Time </h5>
+              </div>
+              <%= f.text_field :reaction_time, :disabled=>true %>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Liters Per Minute </h5>
+              </div>
+              <%= f.number_field :liters_minute, placeholder: "Liters Per Minute", required: true %>
+            </div>
+          </div>
+          <div class="large-3 columns">
+            <div class="field">
+              <div class="label_style">
+                <h5 id="label_style"> Sample Duration </h5>
+              </div>
+              <%= f.text_field :duration, placeholder: "Sample Duration", required: true %>
+            </div>
+          </div>
+        </div>
+        <div class="hidden">
+          <%= f.hidden_field :job_type %>
+          <%= f.hidden_field :cli_type %>
+          <%= f.hidden_field :job_id %>
+          <%= f.hidden_field :user_id %>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns end">
+            <div class="actions">
+              <%= f.submit "Submit Mycometer COC", class: "small button expanded" %>
+            </div>
+          </div>
+          <div class="large-5 columns end">
+            <div data-abide-error class="alert callout" style="display: none; text-align: center;">
+              <p><i class="fi-alert"></i> No fields can be blank! </p>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</div>
+
+<% end %>
+
+<script>
+  $('#mycometer_coc_reaction_time').val('Choose Temp...')
+
+  $('#mycometer_coc_ambient_temp').change(function() {
+      if ($(this).val() === '64') {
+          $('#mycometer_coc_reaction_time').val('41:59')
+      }
+      else if ($(this).val() === '65') {
+          $('#mycometer_coc_reaction_time').val('41:02')
+      }
+      else if ($(this).val() === '66') {
+          $('#mycometer_coc_reaction_time').val('39:31')
+      }
+      else if ($(this).val() === '67') {
+          $('#mycometer_coc_reaction_time').val('38:03')
+      }
+      else if ($(this).val() === '68') {
+          $('#mycometer_coc_reaction_time').val('36:39')
+      }
+      else if ($(this).val() === '69') {
+          $('#mycometer_coc_reaction_time').val('35:18')
+      }
+      else if ($(this).val() === '70') {
+          $('#mycometer_coc_reaction_time').val('34:01')
+      }
+      else if ($(this).val() === '71') {
+          $('#mycometer_coc_reaction_time').val('32:46')
+      }
+      else if ($(this).val() === '72') {
+          $('#mycometer_coc_reaction_time').val('31:35')
+      }
+      else if ($(this).val() === '73') {
+          $('#mycometer_coc_reaction_time').val('30:26')
+      }
+      else if ($(this).val() === '74') {
+          $('#mycometer_coc_reaction_time').val('29:20')
+      }
+      else if ($(this).val() === '75') {
+          $('#mycometer_coc_reaction_time').val('28:17')
+      }
+      else if ($(this).val() === '76') {
+          $('#mycometer_coc_reaction_time').val('27:16')
+      }
+      else if ($(this).val() === '77') {
+          $('#mycometer_coc_reaction_time').val('26:18')
+      }
+      else if ($(this).val() === '78') {
+          $('#mycometer_coc_reaction_time').val('25:22')
+      }
+      else if ($(this).val() === '79') {
+          $('#mycometer_coc_reaction_time').val('24:28')
+      }
+      else if ($(this).val() === '80') {
+          $('#mycometer_coc_reaction_time').val('23:36')
+      }
+      else if ($(this).val() === '81') {
+          $('#mycometer_coc_reaction_time').val('22:47')
+      }
+      else if ($(this).val() === '82') {
+          $('#mycometer_coc_reaction_time').val('21:59')
+      }
+      else if ($(this).val() === '83') {
+          $('#mycometer_coc_reaction_time').val('21:13')
+      }
+      else if ($(this).val() === '84') {
+          $('#mycometer_coc_reaction_time').val('20:29')
+      }
+      else if ($(this).val() === '85') {
+          $('#mycometer_coc_reaction_time').val('19:46')
+      }
+      else if ($(this).val() === '86') {
+          $('#mycometer_coc_reaction_time').val('19:05')
+      }
+      else
+      {
+        $('#mycometer_coc_reaction_time').val('Choose Temp...')
+      }
+  });
+</script>

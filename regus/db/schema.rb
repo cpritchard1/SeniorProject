@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018215950) do
+ActiveRecord::Schema.define(version: 20161118224626) do
 
   create_table "all_reports", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -147,6 +147,28 @@ ActiveRecord::Schema.define(version: 20161018215950) do
   end
 
   add_index "lead_reports", ["xrf_coc_id"], name: "index_lead_reports_on_xrf_coc_id"
+
+  create_table "mycometer_cocs", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "turnaround"
+    t.string   "mold_air"
+    t.string   "building_type"
+    t.string   "sampling_method"
+    t.string   "test_unit"
+    t.integer  "ambient_temp"
+    t.string   "reaction_time"
+    t.integer  "liters_minute"
+    t.string   "duration"
+    t.string   "job_type"
+    t.string   "cli_type"
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "mycometer_cocs", ["job_id"], name: "index_mycometer_cocs_on_job_id"
+  add_index "mycometer_cocs", ["user_id"], name: "index_mycometer_cocs_on_user_id"
 
   create_table "spore_type_counts", force: :cascade do |t|
     t.string   "agrocybe"

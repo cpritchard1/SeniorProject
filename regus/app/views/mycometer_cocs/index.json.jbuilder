@@ -1,0 +1,1 @@
+json.array! @mycometer_cocs, partial: 'mycometer_cocs/mycometer_coc', as: :mycometer_coc
