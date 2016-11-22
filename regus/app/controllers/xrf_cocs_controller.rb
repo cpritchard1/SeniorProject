@@ -171,7 +171,9 @@ class XrfCocsController < ApplicationController
 
     @lead_cocs = XrfCoc.all.to_a
     @mold_cocs = TapeBulkCoc.all.to_a
+    @mycometer_cocs = MycometerCoc.all.to_a
     @lead_cocs.keep_if { |cur| cur.job.id == @xrf_coc.job.id }
     @mold_cocs.keep_if { |cur| cur.job.id == @xrf_coc.job.id }
+    @mycometer_cocs.keep_if { |cur| cur.job.id == @xrf_coc.job.id }
   end
 end

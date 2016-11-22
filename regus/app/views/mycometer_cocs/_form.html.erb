@@ -88,7 +88,14 @@
               <div class="label_style">
                 <h5 id="label_style"> Reaction Time </h5>
               </div>
-              <%= f.text_field :reaction_time, :disabled=>true %>
+              <div class="text">
+                <h5>
+                  <div id="reaction_time">
+
+                  </div>
+                </h5>
+              </div>
+              <%= f.hidden_field :reaction_time %>
             </div>
           </div>
           <div class="large-3 columns">
@@ -104,7 +111,7 @@
               <div class="label_style">
                 <h5 id="label_style"> Sample Duration </h5>
               </div>
-              <%= f.text_field :duration, placeholder: "Sample Duration", required: true %>
+              <%= f.text_field :duration, placeholder: "Sample Duration (minutes)", required: true %>
             </div>
           </div>
         </div>
@@ -135,6 +142,7 @@
 
 <script>
   $('#mycometer_coc_reaction_time').val('Choose Temp...')
+  $('#reaction_time').append( $('#mycometer_coc_reaction_time').val() )
 
   $('#mycometer_coc_ambient_temp').change(function() {
       if ($(this).val() === '64') {
@@ -210,5 +218,8 @@
       {
         $('#mycometer_coc_reaction_time').val('Choose Temp...')
       }
+      
+      $('#reaction_time').empty()
+      $('#reaction_time').append( $('#mycometer_coc_reaction_time').val() )
   });
 </script>

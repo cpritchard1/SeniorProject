@@ -219,19 +219,19 @@
 							<th>Created On</th>
 							<th>Created By</th>
 							<th>Job Type</th>
-							<th></th>
+							<th>  </th>
 							<th>Sample Count</th>
 						</thead>
 						<tbody>
-							 <% if @mycometer_cocs %>
+							<% @mycometer_cocs.each do |cur| %>
 							 	<tr id="jobTypes">
+							    	<td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+							    	<td> <%= cur.user.username %> </td>
+							    	<td> <%= cur.job_type %> </td>
 							    	<td>  </td>
-							    	<td>  </td>
-							    	<td>  </td>
-							    	<td>  </td>
-							    	<td>  </td>
+							    	<td> <%= cur.mycometer_coc_samples.count %> </td>
 							  	</tr>
-							 <% end %>
+							<% end %>
 						</tbody>
 					</table>
 				</div>
@@ -264,7 +264,7 @@
 					<br>
 					<div class="row">
 						<div class="large-12 columns">
-							<%= link_to "New Laboratory", "#", id:"laboratory3", class: "small button expanded" %>
+							<%= link_to "New Laboratory", new_mycometer_coc_path(:job_id=>@job.id, :job_type=>"Laboratory", :cli_type=>"Mold"), id:"laboratory3", class: "small button expanded" %>
 						</div>
 					</div>
 				</div>
@@ -279,7 +279,7 @@
 					<br>
 					<div class="row">
 						<div class="large-12 columns">
-							<%= link_to "New Clearance", "#", id:"clearance3", class: "small button expanded" %>
+							<%= link_to "New Clearance", new_mycometer_coc_path(:job_id=>@job.id, :job_type=>"Clearance", :cli_type=>"Mold"), id:"clearance3", class: "small button expanded" %>
 						</div>
 					</div>
 				</div>

@@ -44,7 +44,7 @@
            <!-- if @xrf_coc.xrf_coc_samples.any? %> -->
             <li class="tabs-title" id="job_links"><a href="#panel5v"> Saved Lead Samples </a></li>
            <!-- end %> -->
-          <li class="tabs-title" id="job_links"><a href="#panel6v">Lead CoC Reports</a></li>
+          <li class="tabs-title" id="job_links"><a href="#panel6v">XRF CoC Reports</a></li>
           <li class="tabs-title"><a href="#panel7v">New Job</a></li>
           <li class="tabs-title"><a href="#panel8v">All Jobs</a></li>
           <li class="tabs-title"><a href="#panel9v">All Reports</a></li>
@@ -87,18 +87,18 @@
 
 <script>
 
-$(document).ready(function () {
-    // will call refreshPartial every 3 seconds
-    setInterval(refreshPartial, 10000)
+  $(document).ready(function () {
+      // will call refreshPartial every 3 seconds
+      setInterval(refreshPartial, 10000)
 
-});
+  });
 
-// calls action refreshing the partial
-function refreshPartial() {
-  $.ajax({
-    url: "reports/reload/" + "<%= @xrf_coc.id %>"
- })
-}
+  // calls action refreshing the partial
+  function refreshPartial() {
+    $.ajax({
+      url: "reports/reload/" + "<%= @xrf_coc.id %>"
+   })
+  }
 
 </script>
 

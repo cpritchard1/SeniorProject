@@ -34,8 +34,10 @@ class JobsController < ApplicationController
 
     @lead_cocs = XrfCoc.all.to_a
     @mold_cocs = TapeBulkCoc.all.to_a
+    @mycometer_cocs = MycometerCoc.all.to_a
     @lead_cocs.keep_if { |cur| cur.job.id == @job.id }
     @mold_cocs.keep_if { |cur| cur.job.id == @job.id }
+    @mycometer_cocs.keep_if { |cur| cur.job.id == @job.id }
     
   end
 

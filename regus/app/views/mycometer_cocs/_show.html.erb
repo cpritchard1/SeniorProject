@@ -1,0 +1,118 @@
+<div id="show_coc">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="job_type">
+          <h4 id="label_style"><%= @mycometer_coc.cli_type %> Mycometer COC - <%= @mycometer_coc.job_type %> </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+    	<div class="large-4 columns">
+    		<div class="label_style">
+    			<h5 id="label_style">Sample Date</h5>
+    		</div>
+    		<div class="text">
+    			<h6><%= @mycometer_coc.date.strftime("%b %d %Y") %></h6>
+    		</div>
+    	</div>
+    	<div class="large-4 columns">
+    		<div class="label_style">
+    			<h5 id="label_style">Sample Time</h5>
+    		</div>
+    		<div class="text">
+    			<h6><%= @mycometer_coc.date.strftime("%I:%M %p") %></h6>
+    		</div>
+    	</div>
+    	<div class="large-4 columns">
+    		<div class="label_style">
+    			<h5 id="label_style">Turnaround Time</h5>
+    		</div>
+    		<div class="text">
+    			<h6><%= @mycometer_coc.turnaround %></h6>
+    		</div>
+    	</div>
+    </div>
+    <br>
+
+    <div class="row">
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Mold Air </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.mold_air %></h6>
+    		</div>
+    	</div>
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Building Type </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.building_type %></h6>
+    		</div>
+    	</div>
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Sampling Method </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.sampling_method %></h6>
+    		</div>
+    	</div>
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Test Unit </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.test_unit %></h6>
+    		</div>
+    	</div>
+    </div>
+    <br>
+
+    <div class="row">
+    	<div class="large-12 columns">
+            <div class="job_type">
+            	<h5 id="label_style"> Analytical Data </h5>
+            </div>
+        </div>
+        
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Ambient Temperature </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.ambient_temp %> &#8457;</h6>
+    		</div>
+    	</div>
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Reaction Time </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.reaction_time %></h6>
+    		</div>
+    	</div>
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Liters Per Minute </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.liters_minute %></h6>
+    		</div>
+    	</div>
+    	<div class="large-3 columns">
+    		<div class="label_style">
+				<h5 id="label_style"> Sample Duration </h5>
+			</div>
+			<div class="text">
+    			<h6><%= @mycometer_coc.duration %> Minutes</h6>
+    		</div>
+    	</div>
+    </div>
+
+</div>
+
+

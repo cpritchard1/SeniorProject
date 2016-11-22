@@ -10,6 +10,10 @@ class MycometerCocsController < ApplicationController
   # GET /mycometer_cocs/1
   # GET /mycometer_cocs/1.json
   def show
+    initialize_tabs
+    @mycometer_coc_sample = MycometerCocSample.new 
+    @sample_number = @mycometer_coc.job.jobsite[:street].split[0] + "-" + (@mycometer_coc.mycometer_coc_samples.length + 1).to_s
+
   end
 
   # GET /mycometer_cocs/new
@@ -43,7 +47,7 @@ class MycometerCocsController < ApplicationController
     @ambient_temp = [ [@_64_ , 64], [@_65_ , 65], [@_66_ , 66], [@_67_ , 67], [@_68_ , 68], [@_69_ , 69], [@_70_ , 70], 
                   [@_71_ , 71], [@_72_ , 72], [@_73_ , 73], [@_74_ , 74], [@_75_ , 75], [@_76_ , 76], [@_77_ , 77], [@_78_ , 78], 
                   [@_79_ , 79], [@_80_ , 80], [@_81_ , 81], [@_82_ , 82], [@_83_ , 83], [@_84_ , 84], [@_85_ , 85], [@_86_ , 86] ]
-                  
+
     initialize_tabs
   end
 
@@ -55,7 +59,8 @@ class MycometerCocsController < ApplicationController
   # POST /mycometer_cocs.json
   def create
     @mycometer_coc = MycometerCoc.new(mycometer_coc_params)
-x
+    @mycometer_coc.date = Time.now
+
     respond_to do |format|
       if @mycometer_coc.save
         format.html { redirect_to @mycometer_coc, notice: 'Mycometer coc was successfully created.' }
@@ -92,6 +97,8 @@ x
   end
 
   def initialize_tabs
+    @job = @mycometer_coc.job 
+
     @jobs = Job.all
     @lead_positive = LeadReport.all 
     @lead_negative = LeadReportNeg.all 
@@ -107,8 +114,10 @@ x
 
     @lead_cocs = XrfCoc.all.to_a
     @mold_cocs = TapeBulkCoc.all.to_a
+    @mycometer_cocs = MycometerCoc.all.to_a
     @lead_cocs.keep_if { |cur| cur.job.id == @mycometer_coc.job.id }
     @mold_cocs.keep_if { |cur| cur.job.id == @mycometer_coc.job.id }
+    @mycometer_cocs.keep_if { |cur| cur.job.id == @mycometer_coc.job.id }
   end
 
   def set_states
@@ -158,6 +167,6 @@ x
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mycometer_coc_params
-      params.require(:mycometer_coc).permit(:date, :turnaround, :mold_air, :building_type, :sampling_method, :ambient_temp, :reaction_time, :liters_minute, :duration, :job_type, :cli_type, :job_id, :user_id)
+      params.require(:mycometer_coc).permit(:date, :turnaround, :mold_air, :building_type, :sampling_method, :test_unit, :ambient_temp, :reaction_time, :liters_minute, :duration, :job_type, :cli_type, :job_id, :user_id)
     end
 end

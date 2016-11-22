@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sample_num: MyString
+  location: MyString
+  bv1: 1
+  bv2: 1
+  cv: 1
+  av: 1
+  bsv: 1
+  result: MyString
+  mycometer_coc_id: 
+
+two:
+  sample_num: MyString
+  location: MyString
+  bv1: 1
+  bv2: 1
+  cv: 1
+  av: 1
+  bsv: 1
+  result: MyString
+  mycometer_coc_id: 

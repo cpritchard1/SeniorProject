@@ -1,0 +1,109 @@
+<div class="large-12 columns" style="padding-left: 2%; padding-right: 2%;">
+	<div class="job_type">
+		<h4 id="label_style">Stored Samples</h4>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+  		<% if @mycometer_coc.mycometer_coc_samples.any? %>
+    		<div class="scroll_box" style="height: 75vh; overflow: auto;">
+      			<div class="large-12 columns">
+        			<br>
+
+        			<% @mycometer_coc.mycometer_coc_samples.reverse.each do |cur| %>
+        				<div class="xrf_sample">
+        					<div class="row">
+                  				<div class="large-3 columns">
+                    				<div class="job_type">
+                      					<h5 id="job">Sample: <%= cur.sample_num %></h5>
+                    				</div>
+                  				</div>
+                			</div>
+                			<div class="row">
+                  				<div class="large-8 columns">
+                    				<div class="label_style">
+                      					<h5 id="label_style">Location</h5>
+                    				</div>
+                    				<div class="text">
+                      					<h6><%= cur.location %></h6>
+                    				</div>
+                  				</div>                			
+        					</div>
+        					<div class="row">
+        						<div class="large-2 columns">
+        							<div class="label_style">
+        								<h5 id="label_style"> BV1 </h5>
+        							</div>
+        							<div class="text">
+        								<h6><%= cur.bv1 %> </h6>
+        							</div>
+        						</div>
+        						<div class="large-2 columns">
+        							<div class="label_style">
+        								<h5 id="label_style"> BV2 </h5>
+        							</div>
+        							<div class="text">
+        								<h6><%= cur.bv2 %> </h6>
+        							</div>
+        						</div>
+        						<div class="large-2 columns">
+        							<div class="label_style">
+        								<h5 id="label_style"> CV </h5>
+        							</div>
+        							<div class="text">
+        								<h6><%= cur.cv %> </h6>
+        							</div>
+        						</div>
+        						<div class="large-2 columns">
+        							<div class="label_style">
+        								<h5 id="label_style"> AV </h5>
+        							</div>
+        							<div class="text">
+        								<h6><%= cur.av %> </h6>
+        							</div>
+        						</div>
+        						<div class="large-2 columns">
+        							<div class="label_style">
+        								<h5 id="label_style"> BSV </h5>
+        							</div>
+        							<div class="text">
+        								<h6><%= cur.bsv %> </h6>
+        							</div>
+        						</div>
+        						<div class="large-2 columns">
+        							<div class="label_style">
+        								<h5 id="label_style"> Result </h5>
+        							</div>
+        							<div class="text">
+        								<h6 class="sample_result"><%= cur.result %></h6>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+        				<br><br>
+        			<% end %>
+        		</div>
+        	</div>
+        <% end %>
+    </div>
+</div>
+
+<script>
+
+    $('.sample_result').each(function(){           
+       if($(this).text() === 'BDL') {
+             $(this).parent().css('background-color', 'white');
+       }
+       else if($(this).text() === 'A') {
+             $(this).parent().css('background-color', 'green');
+       }
+       else if($(this).text() === 'B') {
+             $(this).parent().css('background-color', 'yellow');
+       }
+       else if($(this).text() === 'C') {
+             $(this).parent().css('background-color', 'red');
+       }
+   });
+
+</script>

@@ -37,8 +37,10 @@ class TapeBulkCocSamplesController < ApplicationController
         @job = @tape_bulk_coc.job
         @lead_cocs = XrfCoc.all.to_a
         @mold_cocs = TapeBulkCoc.all.to_a
+        @mycometer_cocs = MycometerCoc.all.to_a
         @lead_cocs.keep_if { |cur| cur.job.id == @tape_bulk_coc.job.id }
         @mold_cocs.keep_if { |cur| cur.job.id == @tape_bulk_coc.job.id }
+        @mycometer_cocs.keep_if { |cur| cur.job.id == @tape_bulk_coc.job.id }
 
         @tape_bulk_coc = @tape_bulk_coc_sample.tape_bulk_coc
         @sample_number = @tape_bulk_coc.job.jobsite[:street].split[0] + "-" + (@tape_bulk_coc.tape_bulk_coc_samples.length + 1).to_s

@@ -149,7 +149,10 @@
       input#tape_bulk_coc_sample_location,
       input#xrf_coc_sample_location,
       input#xrf_coc_sample_reading,
-      input#mycometer_coc_reaction_time, input#mycometer_coc_liters_minute, input#mycometer_coc_duration
+      input#mycometer_coc_reaction_time, input#mycometer_coc_liters_minute, input#mycometer_coc_duration,
+      input#mycometer_coc_sample_location, input#mycometer_coc_sample_bv1, input#mycometer_coc_sample_bv2,
+      input#mycometer_coc_sample_cv, input#mycometer_coc_sample_av , input#mycometer_coc_sample_bsv, 
+      input#mycometer_coc_sample_result
       {
         border-radius: 5px;
         -webkit-box-shadow: 0 8px 6px -6px lightgray;
@@ -453,6 +456,8 @@
         box-shadow: 0px 2px 6px 2px grey;
         height: 150px;
         overflow: hidden;
+        opacity: 0.75;
+         /*-webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))*/
       }
       .laboratory_img,
       .inspection_img,
@@ -463,6 +468,7 @@
         height: 50px;
         overflow: hidden;
         opacity: 0.5;
+        -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0.20)))
       }
 
 </style>

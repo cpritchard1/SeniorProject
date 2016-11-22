@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118224626) do
+ActiveRecord::Schema.define(version: 20161119225320) do
 
   create_table "all_reports", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -147,6 +147,22 @@ ActiveRecord::Schema.define(version: 20161118224626) do
   end
 
   add_index "lead_reports", ["xrf_coc_id"], name: "index_lead_reports_on_xrf_coc_id"
+
+  create_table "mycometer_coc_samples", force: :cascade do |t|
+    t.string   "sample_num"
+    t.string   "location"
+    t.integer  "bv1"
+    t.integer  "bv2"
+    t.decimal  "cv"
+    t.integer  "av"
+    t.decimal  "bsv"
+    t.string   "result"
+    t.integer  "mycometer_coc_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "mycometer_coc_samples", ["mycometer_coc_id"], name: "index_mycometer_coc_samples_on_mycometer_coc_id"
 
   create_table "mycometer_cocs", force: :cascade do |t|
     t.datetime "date"

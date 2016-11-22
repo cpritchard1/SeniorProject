@@ -1,0 +1,178 @@
+<div id="new_sample">
+
+  <div class="xrf_coc_sample_new">
+
+    <div class="xrf_coc">
+      <br>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="job_type">
+            <h4 id="label_style">New Mold Sample</h4>
+          </div>
+        </div>
+      </div>
+
+      <%= form_for(@mycometer_coc_sample, remote: true, :html => {"data-abide" => ''}) do |f| %>
+        <div class="row">
+          <div class="large-4 columns">
+            <h5 id="job">Sample: <%=@sample_number%> </h5>
+            <%= f.hidden_field :sample_num, :value=>@sample_number %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-8 columns end">
+            <div class="label_style">
+              <h5 id="label_style">Location</h5>
+            </div>
+            <%= f.text_field :location, :placeholder=>"Sample Location", required: true, autofocus: true %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-2 columns">
+            <div class="label_style">
+              <h5 id="label_style"> BV1 </h5>
+            </div>
+            <%= f.number_field :bv1, placeholder: '0', required: true %>
+          </div>
+          <div class="large-2 columns">
+            <div class="label_style">
+              <h5 id="label_style"> BV2 </h5>
+            </div>
+            <%= f.number_field :bv2, placeholder: '0', required: true %>
+          </div>
+          <div class="large-2 columns">
+            <div class="label_style">
+              <h5 id="label_style"> CV </h5>
+            </div>
+            <%= f.hidden_field :cv, required: true %>
+            <div class="text">
+              <h5>
+                <div id="cv">
+
+                </div>
+              </h5>
+            </div>
+          </div>
+          <div class="large-2 columns">
+            <div class="label_style">
+              <h5 id="label_style"> AV </h5>
+            </div>
+            <%= f.number_field :av, placeholder: '0', required: true %>
+          </div>
+          <div class="large-2 columns">
+            <div class="label_style">
+              <h5 id="label_style"> BSV </h5>
+            </div>
+            <%= f.hidden_field :bsv, placeholder: '0', required: true %>
+            <div class="text">
+              <h5>
+                <div id="bsv">
+
+                </div>
+              </h5>
+            </div>
+          </div>
+          <div class="large-2 columns">
+            <div class="label_style">
+              <h5 id="label_style"> Result </h5>
+            </div>
+            <h5>
+              <div class="text" id="result">
+
+              </div>
+            </h5>
+            <%=f.hidden_field :result %>
+          </div>
+        </div>
+        <div class="hidden">
+          <%= f.hidden_field :mycometer_coc_id, value: @mycometer_coc.id %>
+        </div>
+
+        <div class="row">
+          <div class="large-3 columns">
+            <div class="actions">
+              <%= f.submit "Save Sample", class: "small button expanded" %>
+            </div>
+          </div>
+          <% if @notice %>
+            <div class="large-5 columns end" style="text-align: center;">
+              <div class="callout success" id="success">
+                  <%= @notice %>
+              </div>
+            </div>
+          <% end %>
+          <div class="large-5 columns end">
+            <div data-abide-error class="alert callout" style="display: none; text-align: center;">
+              <p><i class="fi-alert"></i> No fields can be blank! </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#result').hide()
+
+  $('#mycometer_coc_sample_bv1').change(function() {
+    $('#cv').empty();
+    var BV1 = $('#mycometer_coc_sample_bv1').val();
+    var BV2 = $('#mycometer_coc_sample_bv2').val();
+    $('#mycometer_coc_sample_cv').val( ( Number(BV2) - Number(BV1) )*0.84 + Number(BV2) );
+    $('#cv').append( $('#mycometer_coc_sample_cv').val() );
+  });
+
+  $('#mycometer_coc_sample_bv2').change(function() {
+    $('#cv').empty();
+    var BV1 = $('#mycometer_coc_sample_bv1').val();
+    var BV2 = $('#mycometer_coc_sample_bv2').val();
+    var result = ( Number(BV2) - Number(BV1) )*0.84 + Number(BV2)
+    result = result.toPrecision(5)
+    $('#mycometer_coc_sample_cv').val( result );
+    $('#cv').append( $('#mycometer_coc_sample_cv').val() );
+  });
+
+  $('#mycometer_coc_sample_av').change(function() {
+    $('#bsv').empty();
+    $('#result').empty();
+    var CV = $('#mycometer_coc_sample_cv').val();
+    var AV = $('#mycometer_coc_sample_av').val();
+    var result = ( Number(AV) - Number(CV) )
+    result = result.toPrecision(5)
+    $('#mycometer_coc_sample_bsv').val( result );
+    $('#bsv').append( $('#mycometer_coc_sample_bsv').val() );
+
+    var BSV = $('#mycometer_coc_sample_bsv').val();
+    if ( Number(BSV) < Number(10) ) {
+        $('#mycometer_coc_sample_result').val('BDL');
+        $('#result').append( $('#mycometer_coc_sample_result').val() ).fadeIn();
+        $('#result').css('background-color', 'white')
+    }
+    else if ( Number(BSV) <= Number(25) ) {
+        $('#mycometer_coc_sample_result').val('A');
+        $('#result').append( $('#mycometer_coc_sample_result').val() ).fadeIn();
+        $('#result').css('background-color', 'green')
+    }
+    else if ( Number(BSV) <= Number(350) ) {
+        $('#mycometer_coc_sample_result').val('B');
+        $('#result').append( $('#mycometer_coc_sample_result').val() ).fadeIn();
+        $('#result').css('background-color', 'yellow')
+    }
+    else if ( Number(BSV) > Number(350) ) {
+        $('#mycometer_coc_sample_result').val('C');
+        $('#result').append( $('#mycometer_coc_sample_result').val() ).fadeIn();
+        $('#result').css('background-color', 'red')
+    }
+
+  });
+
+  setTimeout(function() {
+      $('#success').fadeOut('slow');
+  }, 2000); // <-- time in milliseconds
+
+</script>
+
+
+

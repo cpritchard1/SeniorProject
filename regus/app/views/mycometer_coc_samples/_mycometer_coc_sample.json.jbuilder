@@ -1,0 +1,2 @@
+json.extract! mycometer_coc_sample, :id, :sample_num, :location, :bv1, :bv2, :cv, :av, :bsv, :result, :mycometer_coc_id, :created_at, :updated_at
+json.url mycometer_coc_sample_url(mycometer_coc_sample, format: :json)

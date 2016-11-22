@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mycometer Coc Samples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sample num</th>
+      <th>Location</th>
+      <th>Bv1</th>
+      <th>Bv2</th>
+      <th>Cv</th>
+      <th>Av</th>
+      <th>Bsv</th>
+      <th>Result</th>
+      <th>Mycometer coc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mycometer_coc_samples.each do |mycometer_coc_sample| %>
+      <tr>
+        <td><%= mycometer_coc_sample.sample_num %></td>
+        <td><%= mycometer_coc_sample.location %></td>
+        <td><%= mycometer_coc_sample.bv1 %></td>
+        <td><%= mycometer_coc_sample.bv2 %></td>
+        <td><%= mycometer_coc_sample.cv %></td>
+        <td><%= mycometer_coc_sample.av %></td>
+        <td><%= mycometer_coc_sample.bsv %></td>
+        <td><%= mycometer_coc_sample.result %></td>
+        <td><%= mycometer_coc_sample.mycometer_coc %></td>
+        <td><%= link_to 'Show', mycometer_coc_sample %></td>
+        <td><%= link_to 'Edit', edit_mycometer_coc_sample_path(mycometer_coc_sample) %></td>
+        <td><%= link_to 'Destroy', mycometer_coc_sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mycometer coc sample', new_mycometer_coc_sample_path %>
