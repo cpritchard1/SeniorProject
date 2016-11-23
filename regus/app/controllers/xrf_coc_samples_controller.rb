@@ -40,8 +40,10 @@ class XrfCocSamplesController < ApplicationController
         @job = @xrf_coc.job
         @lead_cocs = XrfCoc.all.to_a
         @mold_cocs = TapeBulkCoc.all.to_a
+        @mycometer_cocs = MycometerCoc.all.to_a
         @lead_cocs.keep_if { |cur| cur.job.id == @xrf_coc.job.id }
         @mold_cocs.keep_if { |cur| cur.job.id == @xrf_coc.job.id }
+        @mycometer_cocs.keep_if { |cur| cur.job.id == @xrf_coc.job.id }
         @sample_number = @xrf_coc.job.jobsite[:street].split[0] + "-" + (@xrf_coc.xrf_coc_samples.count + 1).to_s
         @xrf_coc_sample = XrfCocSample.new
         @notice = "Sample was successfully saved"

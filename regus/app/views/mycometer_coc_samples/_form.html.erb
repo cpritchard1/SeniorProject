@@ -116,7 +116,7 @@
 <script>
   $('#result').hide()
 
-  $('#mycometer_coc_sample_bv1').change(function() {
+  $('#mycometer_coc_sample_bv1').keyup(function() {
     $('#cv').empty();
     var BV1 = $('#mycometer_coc_sample_bv1').val();
     var BV2 = $('#mycometer_coc_sample_bv2').val();
@@ -124,7 +124,7 @@
     $('#cv').append( $('#mycometer_coc_sample_cv').val() );
   });
 
-  $('#mycometer_coc_sample_bv2').change(function() {
+  $('#mycometer_coc_sample_bv2').keyup(function() {
     $('#cv').empty();
     var BV1 = $('#mycometer_coc_sample_bv1').val();
     var BV2 = $('#mycometer_coc_sample_bv2').val();
@@ -134,7 +134,7 @@
     $('#cv').append( $('#mycometer_coc_sample_cv').val() );
   });
 
-  $('#mycometer_coc_sample_av').change(function() {
+  $('#mycometer_coc_sample_av').keyup(function() {
     $('#bsv').empty();
     $('#result').empty();
     var CV = $('#mycometer_coc_sample_cv').val();
@@ -148,12 +148,12 @@
     if ( Number(BSV) < Number(10) ) {
         $('#mycometer_coc_sample_result').val('BDL');
         $('#result').append( $('#mycometer_coc_sample_result').val() ).fadeIn();
-        $('#result').css('background-color', 'white')
+        $('#result').css('background-color', 'lightgray')
     }
     else if ( Number(BSV) <= Number(25) ) {
         $('#mycometer_coc_sample_result').val('A');
         $('#result').append( $('#mycometer_coc_sample_result').val() ).fadeIn();
-        $('#result').css('background-color', 'green')
+        $('#result').css('background-color', '#63b561')
     }
     else if ( Number(BSV) <= Number(350) ) {
         $('#mycometer_coc_sample_result').val('B');

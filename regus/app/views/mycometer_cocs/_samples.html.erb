@@ -93,16 +93,20 @@
 
     $('.sample_result').each(function(){           
        if($(this).text() === 'BDL') {
-             $(this).parent().css('background-color', 'white');
+             $(this).parent().css('background-color', 'lightgray');
+             // $(this).append(' - Below Detection Level');
        }
        else if($(this).text() === 'A') {
-             $(this).parent().css('background-color', 'green');
+             $(this).parent().css('background-color', '#63b561');
+             // $(this).append(' - Below Normal')
        }
        else if($(this).text() === 'B') {
              $(this).parent().css('background-color', 'yellow');
+             // $(this).append(' - Atypical')
        }
        else if($(this).text() === 'C') {
-             $(this).parent().css('background-color', 'red');
+             $(this).parent().css('background-color', '#f72222');
+             // $(this).append(' - Above Normal')
        }
    });
 
