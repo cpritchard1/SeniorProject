@@ -66,22 +66,22 @@ jobs = Job.create (
 		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 8, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
 		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 9, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
 		
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
-		# { date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},		
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},
+		{ date: Time.at(rand((Time.now - (60*60*24*365*5))..Time.now)), user_id: 3, company_id: rand(1..30), subcontractor_id: rand(1..30), jobsite_id: 1, company_contact_id: rand(1..60), subcontractor_contact_id: rand(1..60), jobsite_contact_id:  rand(1..60)},		
 	]
 )
 
@@ -147,20 +147,6 @@ names.each do | cur |
 								# jobsite_id: rand(1..9) }])
 end
 
-# jobtypes = JobType.create (
-# 	[
-# 		{ job_type: "Laboratory", job_id: 1, user_id: 1 },
-# 		{ job_type: "Laboratory", job_id: 1, user_id: 1 },
-# 		{ job_type: "Laboratory", job_id: 1, user_id: 1 },
-# 		{ job_type: "Laboratory", job_id: 1, user_id: 1 },
-# 		{ job_type: "Inspection", job_id: 1, user_id: 2 },
-# 		{ job_type: "Inspection", job_id: 1, user_id: 2 },
-# 		{ job_type: "Clearance", job_id: 1, user_id: 3 },
-# 		{ job_type: "Clearance", job_id: 1, user_id: 3 },
-# 		{ job_type: "Clearance", job_id: 1, user_id: 3 },
-# 	]
-# )
-
 turn_around_time = TurnAroundTime.create(
 	[
 		{ turntime: "Same Day"},
@@ -171,6 +157,66 @@ turn_around_time = TurnAroundTime.create(
 		{ turntime: "2 Week"},
 	]
 )
+
+# xrf_cocs = XrfCoc.create(
+# 	[
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", xrfunit: "RMD LPA-1", xrfmode: "Standard", actionlevel: "0.5", abatementlevel: "0.5", job_type: "Inspection", cli_type: "Lead", job_id: 1, user_id: 3},
+# 	]
+# )
+
+# tapebulk_cocs = TapeBulkCoc.create(
+# 	[
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 	]
+# )
+
+# mycometer_cocs = MycometerCoc.create(
+# 	[
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 64, reaction_time: "41:59", liters_minute: "15", duration: "20", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 65, reaction_time: "41:02", liters_minute: "15", duration: "20", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 66, reaction_time: "39:31", liters_minute: "15", duration: "20", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 67, reaction_time: "38:03", liters_minute: "15", duration: "20", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 68, reaction_time: "36:39", liters_minute: "15", duration: "20", job_type: "Inspection", cli_type: "Mold", job_id: 1, user_id: 1},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Clearance", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 69, reaction_time: "35:18", liters_minute: "15", duration: "20", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Clearance", building_type: "Mechanically Ventilated", sampling_method: "Agressive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 70, reaction_time: "34:01", liters_minute: "15", duration: "20", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Clearance", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 71, reaction_time: "32:46", liters_minute: "15", duration: "20", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Clearance", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 72, reaction_time: "31:35", liters_minute: "15", duration: "20", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Clearance", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 73, reaction_time: "30:26", liters_minute: "15", duration: "20", job_type: "Laboratory", cli_type: "Mold", job_id: 1, user_id: 2},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 74, reaction_time: "29:20", liters_minute: "15", duration: "20", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 75, reaction_time: "28:17", liters_minute: "15", duration: "20", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 76, reaction_time: "27:16", liters_minute: "15", duration: "20", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 77, reaction_time: "26:18", liters_minute: "15", duration: "20", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 		{date: Time.now, turnaround: "Same Day", mold_air: "Baseline", building_type: "Non Ventilated", sampling_method: "Passive", test_unit: "Dwyer VFB Visi-Float Flowmeter", ambient_temp: 78, reaction_time: "25:22", liters_minute: "15", duration: "20", job_type: "Clearance", cli_type: "Mold", job_id: 1, user_id: 3},
+# 	]
+# )
 
 lead_report_positive = LeadReportPositive.create(
 	[

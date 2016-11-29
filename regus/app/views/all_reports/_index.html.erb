@@ -26,7 +26,7 @@
                                  <tr id="reportsTable">
                                     <td><%= link_to "#{report.xrf_coc.job.id}", report.xrf_coc.job %></td>
                                     <td><%= link_to "View", report.xrf_coc %></td>
-                                    <td><%= link_to "#{report.date.strftime("%I:%M %p, %b %d %Y")}", lead_report_path(report, format: 'pdf'), target: "_blank" %></td>
+                                    <td><%= link_to "#{report.date.strftime("%b %d %Y, %I:%M %p")}", lead_report_path(report, format: 'pdf'), target: "_blank" %></td>
                                     <td><%= report.company %></td>
                                     <td><%= report.service %></td>
                                     <td><%= report.xrf_coc.xrf_coc_samples.count %></td>
@@ -59,7 +59,7 @@
                                 <tr id="reportsTable">
                                   <td><%= link_to "#{report.xrf_coc.job.id}", report.xrf_coc.job %></td>
                                   <td><%= link_to "View", report.xrf_coc %></td>
-                                  <td><%= link_to "#{report.date.strftime("%I:%M %p, %b %d %Y")}", lead_report_path(report, format: 'pdf'), target: "_blank" %></td>
+                                  <td><%= link_to "#{report.date.strftime("%b %d %Y, %I:%M %p")}", lead_report_path(report, format: 'pdf'), target: "_blank" %></td>
                                   <td><%= report.company %></td>
                                   <td><%= report.service %></td>
                                   <td><%= report.xrf_coc.xrf_coc_samples.count %></td>

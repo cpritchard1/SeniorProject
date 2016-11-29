@@ -60,14 +60,14 @@
 
 			<div class="row">
 				<div class="large-4 columns">
-					<div class="row">
+<!-- 					<div class="row">
 						<div class="large-12 columns">
 							<div class="inspection_img", id="inspection_img1">
-								 <!-- image_tag "inspection.jpg" %> -->
+								<%= image_tag "inspection.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Inspection", new_xrf_coc_path(:job_id=>@job.id, :job_type=>"Inspection", :cli_type=>"Lead"), id: "inspection1", class: "small button expanded" %>
@@ -75,14 +75,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+	<!-- 				<div class="row">
 						<div class="large-12 columns">
 							<div class="laboratory_img" id="laboratory_img1">
-								 <!-- image_tag "laboratory.jpg" %> -->
+								<%= image_tag "laboratory.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Laboratory", new_xrf_coc_path(:job_id=>@job.id, :job_type=>"Laboratory", :cli_type=>"Lead"), id: "laboratory1", class: "small button expanded" %>
@@ -90,14 +90,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+<!-- 					<div class="row">
 						<div class="large-12 columns">
 							<div class="clearance_img" id="clearance_img1">
-								 <!-- image_tag "clearance.jpg" %> -->
+								<%= image_tag "clearance.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Clearance", new_xrf_coc_path( :job_id=>@job.id, :job_type=>"Clearance",  :cli_type=>"Lead"), id: "clearance1", class: "small button expanded" %>
@@ -136,7 +136,7 @@
 						<tbody>
 							<% @mold_cocs.each do |cur| %>
 							 	<tr id="jobTypes">
-							    	<td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+							    	<td> <%= link_to "#{cur.created_at.time.strftime("%b %d %Y, %I:%M %p")}", cur %> </td>
 							    	<td> <%= cur.user.username %> </td>
 							    	<td> <%= cur.job_type %> </td>
 							    	<td>  </td>
@@ -150,14 +150,14 @@
 			<hr>
 			<div class="row">
 				<div class="large-4 columns">
-					<div class="row">
+<!-- 					<div class="row">
 						<div class="large-12 columns">
 							<div class="inspection_img" id="inspection_img2">
 								<%= image_tag "inspection.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Inspection", new_tape_bulk_coc_path(:job_id=>@job.id, :job_type=>"Inspection", :cli_type=>"Mold"), id:"inspection2", class: "small button expanded" %>
@@ -165,14 +165,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+<!-- 					<div class="row">
 						<div class="large-12 columns">
 							<div class="laboratory_img" id="laboratory_img2">
 								<%= image_tag "laboratory.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Laboratory", new_tape_bulk_coc_path(:job_id=>@job.id, :job_type=>"Laboratory", :cli_type=>"Mold"), id:"laboratory2", class: "small button expanded" %>
@@ -180,14 +180,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+<!-- 					<div class="row">
 						<div class="large-12 columns">
 							<div class="clearance_img" id="clearance_img2">
 								<%= image_tag "clearance.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Clearance", new_tape_bulk_coc_path( :job_id=>@job.id, :job_type=>"Clearance",  :cli_type=>"Mold"), id:"clearance2", class: "small button expanded" %>
@@ -225,7 +225,7 @@
 						<tbody>
 							<% @mycometer_cocs.each do |cur| %>
 							 	<tr id="jobTypes">
-							    	<td> <%= link_to "#{cur.created_at.time.strftime("%I:%M %p, %b %d %Y")}", cur %> </td>
+							    	<td> <%= link_to "#{cur.created_at.time.strftime("%b %d %Y, %I:%M %p")}", cur %> </td>
 							    	<td> <%= cur.user.username %> </td>
 							    	<td> <%= cur.job_type %> </td>
 							    	<td>  </td>
@@ -239,14 +239,14 @@
 			<hr>
 			<div class="row">
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="inspection_img" id="inspection_img3">
 								<%= image_tag "inspection.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Inspection", new_mycometer_coc_path(:job_id=>@job.id, :job_type=>"Inspection", :cli_type=>"Mold"), id:"inspection3", class: "small button expanded" %>
@@ -254,14 +254,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="laboratory_img" id="laboratory_img3">
 								<%= image_tag "laboratory.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Laboratory", new_mycometer_coc_path(:job_id=>@job.id, :job_type=>"Laboratory", :cli_type=>"Mold"), id:"laboratory3", class: "small button expanded" %>
@@ -269,14 +269,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="clearance_img" id="clearance_img3">
 								<%= image_tag "clearance.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Clearance", new_mycometer_coc_path(:job_id=>@job.id, :job_type=>"Clearance", :cli_type=>"Mold"), id:"clearance3", class: "small button expanded" %>
@@ -328,14 +328,14 @@
 				<hr>
 				<div class="row">
 					<div class="large-4 columns">	
-						<div class="row">
+						<!-- <div class="row">
 							<div class="large-12 columns">
 								<div class="inspection_img" id="inspection_img4">
 									<%= image_tag "inspection.jpg" %>
 								</div>
 							</div>
 						</div>
-						<br>
+						<br> -->
 						<div class="row">
 							<div class="large-12 columns">
 								<%= link_to "New Inspection", "#", id:"inspection4", class: "small button expanded" %>
@@ -343,14 +343,14 @@
 						</div>
 					</div>
 					<div class="large-4 columns">
-						<div class="row">
+						<!-- <div class="row">
 							<div class="large-12 columns">
 								<div class="laboratory_img" id="laboratory_img4">
 									<%= image_tag "laboratory.jpg" %>
 								</div>
 							</div>
 						</div>
-						<br>
+						<br> -->
 						<div class="row">
 							<div class="large-12 columns">
 								<%= link_to "New Laboratory", "#", id: "laboratory4", class: "small button expanded" %>
@@ -358,14 +358,14 @@
 						</div>
 					</div>
 					<div class="large-4 columns">
-						<div class="row">
+						<!-- <div class="row">
 							<div class="large-12 columns">
 								<div class="clearance_img" id="clearance_img4">
 									<%= image_tag "clearance.jpg" %>
 								</div>
 							</div>
 						</div>
-						<br>
+						<br> -->
 						<div class="row">
 							<div class="large-12 columns">
 								<%= link_to "New Clearance", "#", id:"clearance4", class: "small button expanded" %>
@@ -419,14 +419,14 @@
 			<hr>
 			<div class="row">
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="inspection_img" id="inspection_img5">
 								<%= image_tag "inspection.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Inspection", "#", id:"inspection5", class: "small button expanded" %>
@@ -434,14 +434,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="laboratory_img" id="laboratory_img5">
 								<%= image_tag "laboratory.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Laboratory", "#", id:"laboratory5", class: "small button expanded" %>
@@ -449,14 +449,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="clearance_img" id="clearance_img5">
 								<%= image_tag "clearance.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Clearance", "#", id:"clearance5", class: "small button expanded" %>
@@ -508,14 +508,14 @@
 			<hr>
 			<div class="row">
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="inspection_img" id="inspection_img6">
 								<%= image_tag "inspection.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Inspection", "#", id:"inspection6", class: "small button expanded" %>
@@ -523,14 +523,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="laboratory_img" id="laboratory_img6">
 								<%= image_tag "laboratory.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Laboratory", "#", id:"laboratory6", class: "small button expanded" %>
@@ -538,14 +538,14 @@
 					</div>
 				</div>
 				<div class="large-4 columns">
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-12 columns">
 							<div class="clearance_img" id="clearance_img6">
 								<%= image_tag "clearance.jpg" %>
 							</div>
 						</div>
 					</div>
-					<br>
+					<br> -->
 					<div class="row">
 						<div class="large-12 columns">
 							<%= link_to "New Clearance", "#", id:"clearance6", class: "small button expanded" %>

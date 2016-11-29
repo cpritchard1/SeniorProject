@@ -21,7 +21,7 @@
                           <% @jobs.each do |job| %>
                               <tr id="jobsTable">
                                 <td><%= job.id %> </td>
-                                <td><%= link_to "#{job.date.strftime("%I:%M %p, %b %d %Y")}", job %></td>
+                                <td><%= link_to "#{job.date.strftime("%b %d %Y, %I:%M %p")}", job %></td>
                                 <td><%= job.user.username %></td>
                                 <% if job.company %>
                                     <td><%= job.company.name %></td>

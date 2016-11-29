@@ -27,7 +27,7 @@
         <tbody>
           <% @positive_lead_reports.each do |lead_report| %>
             <tr class="bodyTr">
-              <td><%= lead_report.date.strftime("%I:%M %p, %b %d %Y") %></td>
+              <td><%= lead_report.date.strftime("%b %d %Y, %I:%M %p") %></td>
               <td><%= lead_report.xrf_coc.xrf_coc_samples.count %></td>
               <!-- <td><%= lead_report.company %></td> -->
               <!-- <td><%= lead_report.service %></td> -->
@@ -61,7 +61,7 @@
         <tbody>
           <% @negative_lead_reports.each do |lead_report| %>
             <tr class="bodyTr">
-              <td><%= lead_report.date.strftime("%I:%M %p, %b %d %Y") %></td>
+              <td><%= lead_report.date.strftime("%b %d %Y, %I:%M %p") %></td>
               <td><%= lead_report.xrf_coc.xrf_coc_samples.count %></td>
               <!-- <td><%= lead_report.company %></td> -->
               <!-- <td><%= lead_report.service %></td> -->

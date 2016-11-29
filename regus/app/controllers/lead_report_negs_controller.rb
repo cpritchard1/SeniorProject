@@ -18,13 +18,13 @@ class LeadReportNegsController < ApplicationController
     @lead_report_neg = LeadReportNeg.new
 
     @coc = XrfCoc.find(params[:xrf_coc_id])
-    @job = @coc.cli_type.job_type.job
+    @job = @coc.job
     @lead_report_neg.xrf_coc_id = @coc.id 
     @lead_report_neg.date = Time.now
     @lead_report_neg.company = @job.company.name
     @lead_report_neg.contact = @job.jobsite_contact.name
     @lead_report_neg.address = @job.company.street + ', ' + @job.company.city + ', ' + @job.company.state + ' ' + @job.company.zip 
-    @lead_report_neg.service = @coc.cli_type.clitype + ' ' + @coc.cli_type.job_type.job_type
+    @lead_report_neg.service = @coc.cli_type + ' ' + @coc.job_type
     @lead_report_neg.instrument = @coc.xrfunit
     @lead_report_neg.jobsite_name = @job.jobsite.name 
     @lead_report_neg.jobsite_addr = @job.jobsite.street + ', ' + @job.jobsite.city + ', ' + @job.jobsite.state + ' ' + @job.jobsite.zip

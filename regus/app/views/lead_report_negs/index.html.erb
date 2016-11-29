@@ -17,7 +17,7 @@
   <tbody>
     <% @lead_report_negs.each do |lead_report_neg| %>
       <tr>
-        <td><%= lead_report_neg.date %></td>
+        <td><%= lead_report_neg.date.strftime("%b %d %Y, %I:%M %p") %></td>
         <td><%= lead_report_neg.company %></td>
         <td><%= lead_report_neg.service %></td>
         <td><%= lead_report_neg.instrument %></td>
